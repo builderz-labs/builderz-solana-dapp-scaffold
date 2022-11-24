@@ -47,3 +47,5 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({
     </ConnectionProvider>
   );
 };
+
+export default WalletContextProvider;

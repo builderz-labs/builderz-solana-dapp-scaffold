@@ -58,7 +58,7 @@ const Home: NextPage = () => {
           .
         </p>
 
-        <WalletMultiButtonDynamic />
+        <WalletMultiButtonDynamic className="btn  glow my-4 mt-8" />
       </div>
     </>
   );

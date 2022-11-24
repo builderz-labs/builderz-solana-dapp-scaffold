@@ -1,33 +1,41 @@
-import { ThemeProvider, createTheme } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
-
-import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { ThirdwebProvider } from "@thirdweb-dev/react/solana";
-import { Network } from "@thirdweb-dev/sdk/solana";
+import { useState } from "react";
 import type { AppProps } from "next/app";
 import AppBar from "../components/AppBar";
 import "../styles/globals.css";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import React from "react";
+import { useMediaQuery } from "@mui/material";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: 'dark',
-  },
-});
+import ContextProvider from "../contexts/ContextProvider";
 
-// Change the network to the one you want to use: "mainnet-beta", "testnet", "devnet", "localhost" or your own RPC endpoint
-const network: Network = "mainnet-beta";
+require("@solana/wallet-adapter-react-ui/styles.css");
+
+const drawerWidth = 240;
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <ThemeProvider theme={darkTheme}>
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
-    <ThirdwebProvider network={network}>
-      <CssBaseline />
-      <WalletModalProvider>
-        <AppBar />
-        <Component {...pageProps} />
-      </WalletModalProvider>
-    </ThirdwebProvider>
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: prefersDarkMode ? "dark" : "light",
+        },
+      }),
+    [prefersDarkMode]
+  );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <ContextProvider>
+        <CssBaseline />
+        <WalletModalProvider>
+          <AppBar />
+          <Component {...pageProps} />
+        </WalletModalProvider>
+      </ContextProvider>
     </ThemeProvider>
   );
 }
