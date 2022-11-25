@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build --turbo",
+    "dev": "next dev  --turbo",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -23,8 +23,11 @@
     "@thirdweb-dev/sdk": "^3",
     "daisyui": "^2.42.0",
     "next": "^13",
+    "next-themes": "^0.2.1",
     "react": "^18.2",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.3",
+    "react-toastify": "^9.1.1",
     "styled-components": "^5.3.6",
     "zustand": "^4.1.4"
   },

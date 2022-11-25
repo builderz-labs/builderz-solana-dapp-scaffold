@@ -34,6 +34,13 @@ select {
   --tw-color1-hover: #9333ea;
 }
 
+.navLink {
+  list-style-type: none;
+}
+.active {
+  @apply text-[#43b083] dark:text-[#14F195];
+}
+
 body {
   font-family: "Inter", sans-serif;
   display: flex;
@@ -49,7 +56,6 @@ body {
   font-weight: 400;
   letter-spacing: 125%;
   line-height: 135%;
-  @apply text-black dark:text-white;
 }
 
 h1 {

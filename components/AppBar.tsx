@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
+import { Drawer, useTheme } from "@mui/material";
+
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -168,6 +170,23 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  const theme = useTheme();
+  const drawerSx = {
+    "& .MuiDrawer-paper": {
+      background: `linear-gradient(to bottom right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
+    },
+  };
+
+  const [mode, setMode] = React.useState<"light" | "dark">("light");
+  const colorMode = React.useMemo(
+    () => ({
+      toggleColorMode: () => {
+        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
+      },
+    }),
+    []
+  );
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -202,7 +221,9 @@ export default function PrimarySearchAppBar() {
               />
             </Search>
           </Box>
-          <Box sx={{ flexGrow: 1 }}></Box>
+          <Box sx={{ flexGrow: 1 }}>
+            <div></div>
+          </Box>
           <Box
             sx={{
               display: { xs: "none", md: "flex" },
@@ -274,6 +295,9 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
+          <Drawer sx={drawerSx} variant="temporary">
+            ...
+          </Drawer>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}
