@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import { styled, alpha } from "@mui/material/styles";
 import AppBar from "@mui/material/AppBar";
-import { Drawer, useTheme } from "@mui/material";
+import { useMediaQuery, useTheme } from "@mui/material";
 
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -20,9 +20,8 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import dynamic from "next/dynamic";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import useUserSOLBalanceStore from "../stores/useUserSOLBalanceStore";
-import ThemeSwitch from "./ThemeSwitch";
-import Switch from "@mui/material/Switch";
-import { ThemeContext } from "styled-components";
+import Drawer from "./Drawer";
+import ThemeSwitcherComponent from "./ThemeSwitcher";
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -93,6 +92,17 @@ export default function PrimarySearchAppBar() {
   };
   const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+
+  // Get OS-level preference for dark mode
+  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+
+  // state: boolean ; true == use dark mode
+  const [darkMode, setDarkMode] = useState(prefersDarkMode);
+
+  const toggleDarkMode = (checked: boolean) => {
+    if (checked === null) setDarkMode(prefersDarkMode);
+    else setDarkMode(checked);
   };
 
   const menuId = "primary-search-account-menu";
@@ -194,15 +204,7 @@ export default function PrimarySearchAppBar() {
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="open drawer"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
+            <Drawer />
             <Typography
               variant="h6"
               noWrap
@@ -295,9 +297,6 @@ export default function PrimarySearchAppBar() {
               <MoreIcon />
             </IconButton>
           </Box>
-          <Drawer sx={drawerSx} variant="temporary">
-            ...
-          </Drawer>
         </Toolbar>
       </AppBar>
       {renderMobileMenu}

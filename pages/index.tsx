@@ -55,7 +55,6 @@ const Home: NextPage = () => {
               Solana SDK
             </a>
           </b>
-          .
         </p>
 
         <WalletMultiButtonDynamic className="btn  glow my-4 mt-8" />
