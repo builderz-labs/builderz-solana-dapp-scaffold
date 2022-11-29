@@ -35,9 +35,9 @@ function MyApp({ Component, pageProps }: AppProps) {
     [darkMode]
   );
 
-  const toggleDarkMode = (checked: boolean) => {
-    if (checked === null) setDarkMode(prefersDarkMode);
-    else setDarkMode(checked);
+  const toggleDarkMode = (useDark?: boolean) => {
+    if (useDark === null) setDarkMode(prefersDarkMode);
+    else setDarkMode(useDark!);
   };
   return (
     <ThemeProvider theme={theme}>

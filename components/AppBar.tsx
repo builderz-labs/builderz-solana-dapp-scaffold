@@ -19,7 +19,6 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import dynamic from "next/dynamic";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
-import useUserSOLBalanceStore from "../stores/useUserSOLBalanceStore";
 import Drawer from "./Drawer";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
 
@@ -76,7 +75,6 @@ export default function PrimarySearchAppBar() {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
-  const balance = useUserSOLBalanceStore((s) => s.balance);
   const wallet = useAnchorWallet();
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -273,11 +271,6 @@ export default function PrimarySearchAppBar() {
                   >
                     <AccountCircle />
                   </IconButton>
-                  <Box sx={{ marginLeft: "16px" }}>
-                    <div className="text-black dark:text-white mx-4">
-                      {balance > 0 ? balance.toFixed(2) : 0} SOL
-                    </div>
-                  </Box>
                 </Box>
               </div>
             ) : null}
