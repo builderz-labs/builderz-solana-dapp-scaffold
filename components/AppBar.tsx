@@ -21,6 +21,9 @@ import dynamic from "next/dynamic";
 import { useAnchorWallet } from "@solana/wallet-adapter-react";
 import Drawer from "./Drawer";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
+import themes from './themes';
+import { createTheme } from "@mui/material";
+
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -71,7 +74,7 @@ interface Props {
   toggleTheme(): void;
 }
 
-export default function PrimarySearchAppBar() {
+export default function PrimarySearchAppBar({ toggleTheme }: Props) {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
     React.useState<null | HTMLElement>(null);
@@ -98,9 +101,20 @@ export default function PrimarySearchAppBar() {
   // state: boolean ; true == use dark mode
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
 
-  const toggleDarkMode = (checked: boolean) => {
-    if (checked === null) setDarkMode(prefersDarkMode);
-    else setDarkMode(checked);
+  const themeString = (b: boolean) => (b ? "dark" : "light");
+
+
+  
+  const theme = React.useMemo(
+    () => createTheme(themeString(darkMode) === "dark" ? themes.dark : themes.light),
+    [darkMode]
+  );
+
+  const toggleDarkMode = (useDark?: boolean) => {
+    if (useDark === null) {setDarkMode(prefersDarkMode);
+    
+    }
+    else setDarkMode(useDark!);
   };
 
   const menuId = "primary-search-account-menu";
@@ -178,25 +192,15 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
-  const theme = useTheme();
   const drawerSx = {
     "& .MuiDrawer-paper": {
       background: `linear-gradient(to bottom right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
     },
   };
 
-  const [mode, setMode] = React.useState<"light" | "dark">("light");
-  const colorMode = React.useMemo(
-    () => ({
-      toggleColorMode: () => {
-        setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
-      },
-    }),
-    []
-  );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} className="w-full">
       <AppBar position="static">
         <Toolbar>
           <Box
@@ -275,8 +279,11 @@ export default function PrimarySearchAppBar() {
               </div>
             ) : null}
             <div className="ml-4">
-              <WalletMultiButtonDynamic className="btn  glow-on-hover my-4" />
+              <WalletMultiButtonDynamic className="btn btn-outline  glow my-4" />
             </div>
+          </Box>
+          <Box sx={{ display: { xs: "flex" } }}>
+
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

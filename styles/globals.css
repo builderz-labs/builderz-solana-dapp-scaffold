@@ -14,9 +14,16 @@
 /* Set core body defaults */
 body {
   min-height: 100vh;
+  min-width: 100%;
+  max-width: 100%;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
   padding-bottom: 250px;
+}
+
+#__next {
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* Inherit fonts for inputs and buttons */
