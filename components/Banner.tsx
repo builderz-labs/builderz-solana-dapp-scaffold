@@ -16,9 +16,7 @@ export default function Banner() {
       <Collapse in={open1}>
         <Alert
           severity="warning"
-          style={{ display: "flex", justifyContent: "space-between" }}
-          className="rounded-lg m-4 bg-teal-800 mb-2 text-center text-black flex justify-between"
-          action={
+          style={{ display: "flex", justifyContent: "space-between" }}          action={
             <IconButton
               size="small"
               color="inherit"
@@ -31,11 +29,10 @@ export default function Banner() {
         >
           <div className="w-full flex justify-between">
             <p>
-              We are live in Alpha on <strong>mainnet!</strong>
+              Welcome to the <strong>Builderz Solana dApp Scaffold</strong>
             </p>
           </div>
         </Alert>
-        {/* <RequestAirdrop /> */}
       </Collapse>
     </Box>
   );

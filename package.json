@@ -1,6 +1,6 @@
 {
-  "name": "b-trust-dapp",
-  "version": "0.1.0",
+  "name": "Builderz-Solana-dApp-Scaffold",
+  "version": "1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

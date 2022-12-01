@@ -113,12 +113,12 @@ body::-webkit-scrollbar-thumb {
 
 /* Glow Button */
 .glow-on-hover {
+  @apply bg-[#fff] dark:bg-[#111];
   height: 50px;
   min-width: 150px;
   border: none;
   outline: none;
   color: #fff;
-  background: #111;
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -214,23 +214,23 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-on-hover:after {
+  @apply bg-[#fff] dark:bg-[#111];
   z-index: -1;
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
   left: 0;
   top: 0;
   border-radius: 10px;
 }
 .glow:after {
+  @apply bg-[#fff] dark:bg-[#111];
   z-index: -1;
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #111;
   left: 0;
   top: 0;
   border-radius: 10px;

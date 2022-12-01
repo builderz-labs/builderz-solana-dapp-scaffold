@@ -13,10 +13,7 @@ import { createTheme } from "@mui/material";
 import ThemeSwitcherComponent from "../components/ThemeSwitcher";
 import { ToastContainer } from 'react-toastify';
 import themes from "../components/themes";
-
-
-const drawerWidth = 240;
-
+import Banner from '../components/Banner';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -42,15 +39,16 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
 
   const themeString = (b: boolean) => (b ? "dark" : "light");
-  
+
   const theme = React.useMemo(
     () => createTheme(themeString(darkMode) === "dark" ? themes.dark : themes.light),
     [darkMode]
   );
 
   const toggleDarkMode = (useDark?: boolean) => {
-    if (useDark === null) {setDarkMode(prefersDarkMode);
-    
+    if (useDark === null) {
+      setDarkMode(prefersDarkMode);
+
     }
     else setDarkMode(useDark!);
   };
@@ -60,7 +58,6 @@ function MyApp({ Component, pageProps }: AppProps) {
         <CssBaseline enableColorScheme />
         <WalletModalProvider>
           <AppBar setTheme={toggleDarkMode} />
-          {/* <ThemeSwitcherComponent useOs={true} themeChanger={toggleDarkMode} /> */}
           <Component {...pageProps} />
         </WalletModalProvider>
       </ContextProvider>

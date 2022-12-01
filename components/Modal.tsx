@@ -5,6 +5,7 @@ import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 
 
@@ -43,11 +44,14 @@ export default function TransitionsModal() {
         <Fade in={open}>
           <Box sx={style}>
             <Typography id="transition-modal-title" variant="h6" component="h2">
-              Text in a modal
+              Hello Builder 👋
             </Typography>
-            <Typography id="transition-modal-description" sx={{ mt: 2 }}>
-              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+            <Typography id="transition-modal-description" sx={{ mt: 2, mb: 2 }}>
+              We encourage you to contribute to this project by adding your own components to the Builderz Solana dApp Scaffold.
             </Typography>
+            <Button variant="outlined" color="secondary" endIcon={<GitHubIcon />}>
+              Send
+            </Button>
           </Box>
         </Fade>
       </Modal>
