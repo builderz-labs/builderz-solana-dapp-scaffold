@@ -74,130 +74,101 @@ interface Props {
   toggleTheme(): void;
 }
 
-export default function PrimarySearchAppBar() {
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
-    React.useState<null | HTMLElement>(null);
-  const wallet = useAnchorWallet();
-  const isMenuOpen = Boolean(anchorEl);
-  const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
-  const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleMobileMenuClose = () => {
-    setMobileMoreAnchorEl(null);
-  };
-  const handleMenuClose = () => {
-    setAnchorEl(null);
-    handleMobileMenuClose();
-  };
-  const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setMobileMoreAnchorEl(event.currentTarget);
-  };
+export default function PrimarySearchAppBar({ setTheme }: any) {
+  // const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
+  // const [mobileMoreAnchorEl, setMobileMoreAnchorEl] =
+  //   React.useState<null | HTMLElement>(null);
+  // const wallet = useAnchorWallet();
+  // const isMenuOpen = Boolean(anchorEl);
+  // const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
+  // const handleProfileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+  // const handleMobileMenuClose = () => {
+  //   setMobileMoreAnchorEl(null);
+  // };
+  // const handleMenuClose = () => {
+  //   setAnchorEl(null);
+  //   handleMobileMenuClose();
+  // };
+  // const handleMobileMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+  //   setMobileMoreAnchorEl(event.currentTarget);
+  // };
 
-  // Get OS-level preference for dark mode
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+  // const menuId = "primary-search-account-menu";
+  // const renderMenu = (
+  //   <Menu
+  //     anchorEl={anchorEl}
+  //     anchorOrigin={{
+  //       vertical: "top",
+  //       horizontal: "right",
+  //     }}
+  //     id={menuId}
+  //     keepMounted
+  //     transformOrigin={{
+  //       vertical: "top",
+  //       horizontal: "right",
+  //     }}
+  //     open={isMenuOpen}
+  //     onClose={handleMenuClose}
+  //   >
+  //     <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
+  //     <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+  //     <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
+  //   </Menu>
+  // );
 
-  // state: boolean ; true == use dark mode
-  const [darkMode, setDarkMode] = useState(prefersDarkMode);
-
-  const themeString = (b: boolean) => (b ? "dark" : "light");
-
-
-  
-  const theme = React.useMemo(
-    () => createTheme(themeString(darkMode) === "dark" ? themes.dark : themes.light),
-    [darkMode]
-  );
-
-  const toggleDarkMode = (useDark?: boolean) => {
-    if (useDark === null) {setDarkMode(prefersDarkMode);
-    
-    }
-    else setDarkMode(useDark!);
-  };
-
-  const menuId = "primary-search-account-menu";
-  const renderMenu = (
-    <Menu
-      anchorEl={anchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={menuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMenuOpen}
-      onClose={handleMenuClose}
-    >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-      <MenuItem onClick={handleMenuClose}>Logout</MenuItem>
-    </Menu>
-  );
-
-  const mobileMenuId = "primary-search-account-menu-mobile";
-  const renderMobileMenu = (
-    <Menu
-      anchorEl={mobileMoreAnchorEl}
-      anchorOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      id={mobileMenuId}
-      keepMounted
-      transformOrigin={{
-        vertical: "top",
-        horizontal: "right",
-      }}
-      open={isMobileMenuOpen}
-      onClose={handleMobileMenuClose}
-    >
-      <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
-      </MenuItem>
-      <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
-      </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
-      </MenuItem>
-    </Menu>
-  );
-
-  const drawerSx = {
-    "& .MuiDrawer-paper": {
-      background: `linear-gradient(to bottom right, ${theme.palette.primary.main}, ${theme.palette.primary.dark})`,
-    },
-  };
-
+  // const mobileMenuId = "primary-search-account-menu-mobile";
+  // const renderMobileMenu = (
+  //   <Menu
+  //     anchorEl={mobileMoreAnchorEl}
+  //     anchorOrigin={{
+  //       vertical: "top",
+  //       horizontal: "right",
+  //     }}
+  //     id={mobileMenuId}
+  //     keepMounted
+  //     transformOrigin={{
+  //       vertical: "top",
+  //       horizontal: "right",
+  //     }}
+  //     open={isMobileMenuOpen}
+  //     onClose={handleMobileMenuClose}
+  //   >
+  //     <MenuItem>
+  //       <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+  //         <Badge badgeContent={4} color="error">
+  //           <MailIcon />
+  //         </Badge>
+  //       </IconButton>
+  //       <p>Messages</p>
+  //     </MenuItem>
+  //     <MenuItem>
+  //       <IconButton
+  //         size="large"
+  //         aria-label="show 17 new notifications"
+  //         color="inherit"
+  //       >
+  //         <Badge badgeContent={17} color="error">
+  //           <NotificationsIcon />
+  //         </Badge>
+  //       </IconButton>
+  //       <p>Notifications</p>
+  //     </MenuItem>
+  //     <MenuItem onClick={handleProfileMenuOpen}>
+  //       <IconButton
+  //         size="large"
+  //         aria-label="account of current user"
+  //         aria-controls="primary-search-account-menu"
+  //         aria-haspopup="true"
+  //         color="inherit"
+  //       >
+  //         <AccountCircle />
+  //       </IconButton>
+  //       <p>Profile</p>
+  //     </MenuItem>
+  //   </Menu>
+  // );
 
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
@@ -234,7 +205,7 @@ export default function PrimarySearchAppBar() {
               flexDirection: "row",
             }}
           >
-            {wallet ? (
+            {/* {wallet ? (
               <div className="w-full">
                 <Box
                   sx={{
@@ -277,12 +248,13 @@ export default function PrimarySearchAppBar() {
                   </IconButton>
                 </Box>
               </div>
-            ) : null}
-            <div className="ml-4">
-              <WalletMultiButtonDynamic className="btn btn-outline  glow my-4" />
+            ) : null} */}
+            <div className="flex ml-4">
+              <ThemeSwitcherComponent useOs={true} themeChanger={setTheme} />
+              <WalletMultiButtonDynamic className="btn btn-outline glow my-4" />
             </div>
           </Box>
-          <Box sx={{ display: { xs: "flex" } }}>
+          {/* <Box sx={{ display: { xs: "flex" } }}>
 
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
@@ -296,11 +268,11 @@ export default function PrimarySearchAppBar() {
             >
               <MoreIcon />
             </IconButton>
-          </Box>
+          </Box> */}
         </Toolbar>
       </AppBar>
-      {renderMobileMenu}
-      {renderMenu}
+      {/* {renderMobileMenu}
+      {renderMenu} */}
     </Box>
   );
 }

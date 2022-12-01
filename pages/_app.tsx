@@ -42,8 +42,6 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(prefersDarkMode);
 
   const themeString = (b: boolean) => (b ? "dark" : "light");
-
-
   
   const theme = React.useMemo(
     () => createTheme(themeString(darkMode) === "dark" ? themes.dark : themes.light),
@@ -61,8 +59,8 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ContextProvider>
         <CssBaseline enableColorScheme />
         <WalletModalProvider>
-          <AppBar />
-          <ThemeSwitcherComponent useOs={true} themeChanger={toggleDarkMode} />
+          <AppBar setTheme={toggleDarkMode} />
+          {/* <ThemeSwitcherComponent useOs={true} themeChanger={toggleDarkMode} /> */}
           <Component {...pageProps} />
         </WalletModalProvider>
       </ContextProvider>
@@ -76,7 +74,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         pauseOnFocusLoss
         draggable
         pauseOnHover
-        theme="dark"
+        theme="dark" // TODO: depending on theme
       />
     </ThemeProvider>
   );
