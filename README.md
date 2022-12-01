@@ -1,14 +1,23 @@
 ## Builderz Solana dApp Scaffold (Nextjs13, Typescript & More)
+current version: 1.0
 
-This is our open source Solana dApp Scaffold for the Solana community. 
+This is our open source Solana dApp Scaffold for the Solana community!
+
+Packages included and set 
+
+Feel free to use it as a starting point for your next Solana project.
+
+
+Also feel free to contribute by creating your own components, refactoring or other improvement.
 
 
 ## Getting Started
 
 Create a project using this example:
 
+
 ```bash
-npm i
+npm i 
 ```
 
 ```bash
