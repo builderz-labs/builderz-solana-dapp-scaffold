@@ -47,7 +47,7 @@ export default function TransitionsModal() {
             <Typography id="transition-modal-description" sx={{ mt: 2, mb: 2 }}>
               We encourage you to contribute to this project by adding your own components to the Builderz Solana dApp Scaffold.
             </Typography>
-            <Button variant="outlined" color="secondary" endIcon={<GitHubIcon />}>
+            <Button href="https://github.com/Cynova-Group/builderz-solana-dapp-scaffold" target="__blank" variant="outlined" color="secondary" endIcon={<GitHubIcon />}>
               Send
             </Button>
           </Box>

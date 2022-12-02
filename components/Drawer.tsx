@@ -105,7 +105,7 @@ export default function SwipeableTemporaryDrawer() {
                 >
                   <div className="rounded-lg border border-[#1E2232]  dark:border-[#bcbdc1] mt-auto px-3 py-2 text-black dark:text-gray-400">
                     <a
-                      href=""
+                      href="https://github.com/Cynova-Group/builderz-solana-dapp-scaffold"
                       className="flex justify-center items-center  gap-2 text-xs"
                     >
                       <svg
