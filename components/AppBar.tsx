@@ -6,9 +6,8 @@ import Toolbar from "@mui/material/Toolbar";
 import dynamic from "next/dynamic";
 import Drawer from "./Drawer";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
-import { Logo } from './Logo';
-import SettingsMenuDropdown from './SettingsMenuDropdown';
-
+import { Logo } from "./Logo";
+import SettingsMenuDropdown from "./SettingsMenuDropdown";
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -17,14 +16,15 @@ const WalletMultiButtonDynamic = dynamic(
 );
 
 export default function PrimarySearchAppBar({ setTheme }: any) {
-
-
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
-      <AppBar position="static" sx={{
-        paddingTop: 2,
-        paddingBottom: 2,
-      }}>
+      <AppBar
+        position="static"
+        sx={{
+          paddingTop: 2,
+          paddingBottom: 2,
+        }}
+      >
         <Toolbar>
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
@@ -37,7 +37,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
           </Box>
           <Box
             sx={{
-              display: { xs: "none", md: "flex" },
+              display: { md: "flex" },
               flexDirection: "row",
             }}
           >
