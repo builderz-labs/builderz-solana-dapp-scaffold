@@ -5,7 +5,7 @@ This is our open source Solana dApp Scaffold for the Solana community  [Next.js]
 
 Feel free to use it as a starting point for your next Solana project.
 
-Also feel free to contribute by creating your own components, refactoring or other improvement.
+Also feel free to send us feedback, open an issue or even PR and contribute by creating your own components, refactoring or other improvement.
 
 
 Responsive                     |  Desktop
