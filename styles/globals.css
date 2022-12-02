@@ -116,7 +116,7 @@ body::-webkit-scrollbar-thumb {
   @apply bg-[#fff] dark:bg-[#111];
   height: 50px;
   min-width: 150px;
-  border: none;
+  border: 1px solid gray;
   outline: none;
   color: #fff;
   cursor: pointer;
