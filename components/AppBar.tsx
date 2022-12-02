@@ -29,7 +29,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Drawer />
-            <Logo /> {/* TODO: insert theme */}
+            <Logo />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <div></div>
@@ -41,7 +41,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             }}
           >
             <div className="flex ml-4 items-center gap-2">
-              <ThemeSwitcherComponent useOs={false} themeChanger={setTheme} />
+              <ThemeSwitcherComponent themeChanger={setTheme} />
               <WalletMultiButtonDynamic className="btn btn-outline glow my-4" />
             </div>
           </Box>

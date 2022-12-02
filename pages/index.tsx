@@ -19,16 +19,7 @@ const WalletMultiButtonDynamic = dynamic(
 
 const Home: NextPage = () => {
   const notify = () =>
-    toast("🦄 Wow so easy!", {
-      position: "bottom-right",
-      autoClose: 5000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
+    toast("🦄 Wow so easy!");
 
   return (
     <>

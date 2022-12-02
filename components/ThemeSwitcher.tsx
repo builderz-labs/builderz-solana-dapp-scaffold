@@ -1,20 +1,9 @@
 import {
   FormControlLabel,
   Switch,
-  useMediaQuery,
 } from "@mui/material";
 import * as React from "react";
-import { useState } from "react";
-
-interface ThemeSwitcherOptions {
-  useOs?: boolean;
-  useDark?: boolean;
-  darkPrompt?: string;
-  osPrompt?: string;
-  tooltipText?: string;
-  themeChanger: (useDark?: boolean) => void;
-
-}
+import { useTheme } from "@mui/material/styles";
 
 import { styled } from '@mui/material/styles';
 
@@ -66,45 +55,17 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 
-export default function ThemeSwitcherComponent(props: ThemeSwitcherOptions) {
-  //const { prompt, useOs, useDark } = props;
-
-  const expandedProps = {
-    ...props,
-    useOs: props.useOs || false,
-    useDark: props.useDark || false,
-    darkPrompt: props.darkPrompt || "",
-    osPrompt: props.osPrompt || "Use OS preference",
-    tooltipText: props.tooltipText || "OS preference: ",
-  };
-
-  const [state, setState] = useState(expandedProps);
-
-  const handleCheck = (_e: any, checked: boolean) => { // TODO: Do we need this?
-    setState({ ...state, useOs: checked });
-    state.themeChanger(checked ? true : state.useDark);
-    console.log(state);
-  };
-
-  const handleSwitch = (_e: any, checked: boolean) => {
-    setState({ ...state, useDark: checked });
-    state.themeChanger(checked);
-    console.log(state);
-  };
-
-  // Get OS-level preference for dark mode
-  const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
+export default function ThemeSwitcherComponent(props: { themeChanger: (useDark?: boolean) => void }) {
+  const theme = useTheme();
 
   return (
     <>
       <FormControlLabel
-        labelPlacement="end"
-        label={state.darkPrompt}
+        label={""}
         control={
           <MaterialUISwitch
-            checked={state.useOs ? prefersDarkMode : state.useDark}
-            disabled={state.useOs}
-            onChange={handleSwitch}
+            checked={theme.palette.mode === "dark" ? true : false}
+            onChange={(e) => props.themeChanger(e.target.checked)}
           />
         }
       />
