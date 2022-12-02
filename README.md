@@ -1,4 +1,4 @@
-## Builderz Solana dApp Scaffold (Nextjs13, Typescript & More)
+## Builderz Solana dApp Scaffold (Nextjs13, Typescript, TailwindCSS, MaterialUI, web3.js)
 current version: 1.0
 
 This is our open source Solana dApp Scaffold for the Solana community!
