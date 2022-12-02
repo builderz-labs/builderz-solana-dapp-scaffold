@@ -3,7 +3,21 @@ current version: 1.0
 
 This is our open source Solana dApp Scaffold for the Solana community!
 
-Packages included and set 
+Packages included and set:
+
+- Nextjs13
+- Typescript
+- react-dom
+- Solana web3.js
+- TailwindCSS
+- DaisyUI
+- MaterialUI
+
+- Dark/Light Mode with Switch, defined theme and layout, ready to tweak for your needs.
+
+- Solana Wallet Adapter with auto detect of installed wallet extensions.
+
+
 
 Feel free to use it as a starting point for your next Solana project.
 
