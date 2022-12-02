@@ -65,7 +65,7 @@ const Home: NextPage = () => {
                 Notify!
               </button>
               <Modal />
-              <WalletMultiButtonDynamic className="btn  glow-on-hover" />
+              <WalletMultiButtonDynamic className="btn glow" />
             </div>
           </div>
         </div>
