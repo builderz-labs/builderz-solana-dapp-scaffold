@@ -1,7 +1,13 @@
 ## Builderz Solana dApp Scaffold (Nextjs13, Typescript, TailwindCSS, MaterialUI, web3.js)
 current version: 1.0
 
-This is our open source Solana dApp Scaffold for the Solana community!
+This is our open source Solana dApp Scaffold for the Solana community  [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).!
+
+
+Responsive                     |  Desktop
+:-------------------------:|:-------------------------:
+![](scaffold-mobile.png)  |  ![](scaffold-desktop.png)
+
 
 Packages included and set:
 
