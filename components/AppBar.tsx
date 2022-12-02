@@ -7,7 +7,6 @@ import dynamic from "next/dynamic";
 import Drawer from "./Drawer";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
 import { Logo } from "./Logo";
-import SettingsMenuDropdown from "./SettingsMenuDropdown";
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -30,7 +29,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Drawer />
-            <Logo />
+            <Logo /> {/* TODO: insert theme */}
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <div></div>

@@ -10,10 +10,8 @@ import { useMediaQuery } from "@mui/material";
 import ContextProvider from "../contexts/ContextProvider";
 require("@solana/wallet-adapter-react-ui/styles.css");
 import { createTheme } from "@mui/material";
-import ThemeSwitcherComponent from "../components/ThemeSwitcher";
 import { ToastContainer } from 'react-toastify';
 import themes from "../components/themes";
-import Banner from '../components/Banner';
 
 declare module '@mui/material/styles' {
   interface Theme {
@@ -28,8 +26,6 @@ declare module '@mui/material/styles' {
     };
   }
 }
-
-
 
 function MyApp({ Component, pageProps }: AppProps) {
   // Get OS-level preference for dark mode

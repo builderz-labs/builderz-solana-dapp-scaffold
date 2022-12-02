@@ -1,23 +1,16 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import Button from "@mui/material/Button";
 import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import InboxIcon from "@mui/icons-material/MoveToInbox";
-import MailIcon from "@mui/icons-material/Mail";
+
 import { IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import CategoryIcon from '@mui/icons-material/Category';
 import HomeIcon from '@mui/icons-material/Home';
-import BookIcon from '@mui/icons-material/Book';
-import ContactPageIcon from '@mui/icons-material/ContactPage';
-import ReviewsIcon from '@mui/icons-material/Reviews';
-
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -62,7 +55,7 @@ export default function SwipeableTemporaryDrawer() {
               sx={{ display: { xs: 'none', sm: 'block' } }}
               className="my-5 text-start pl-5"
             >
-              B-Trust
+              Builderz
             </Typography>
       </div>
       <Divider />

@@ -1,8 +1,6 @@
 import {
-  Checkbox,
   FormControlLabel,
   Switch,
-  Tooltip,
   useMediaQuery,
 } from "@mui/material";
 import * as React from "react";
@@ -18,12 +16,7 @@ interface ThemeSwitcherOptions {
 
 }
 
-
 import { styled } from '@mui/material/styles';
-import FormGroup from '@mui/material/FormGroup';
-import  { SwitchProps } from '@mui/material/Switch';
-import Stack from '@mui/material/Stack';
-import Typography from '@mui/material/Typography';
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -87,7 +80,7 @@ export default function ThemeSwitcherComponent(props: ThemeSwitcherOptions) {
 
   const [state, setState] = useState(expandedProps);
 
-  const handleCheck = (_e: any, checked: boolean) => {
+  const handleCheck = (_e: any, checked: boolean) => { // TODO: Do we need this?
     setState({ ...state, useOs: checked });
     state.themeChanger(checked ? true : state.useDark);
     console.log(state);

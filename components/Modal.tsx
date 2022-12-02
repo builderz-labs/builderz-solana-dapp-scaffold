@@ -7,8 +7,6 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
 
-
-
 const style = {
   position: 'absolute' as 'absolute',
   top: '50%',
