@@ -11,15 +11,6 @@
   box-sizing: border-box;
 }
 
-/* Set core body defaults */
-body {
-  min-height: 100vh;
-  min-width: 100%;
-  max-width: 100%;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  padding-bottom: 250px;
-}
 
 #__next {
   width: 100%;
@@ -73,14 +64,14 @@ h1 {
   line-height: calc(36px + (40 - 36) * ((100vw - 320px) / (1280 - 320)));
 }
 h2 {
-  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1280 - 320)));
+  font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 800;
   letter-spacing: 125%;
-  line-height: 28px;
+  line-height: calc(34px + (38 - 34) * ((100vw - 320px) / (1280 - 320)));
 }
-h2 {
-  font-size: calc(20px + (24 - 20) * ((100vw - 320px) / (1280 - 320)));
+h3 {
+  font-size: calc(18px + (20 - 18) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 700;
   letter-spacing: 125%;
