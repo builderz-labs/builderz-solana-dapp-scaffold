@@ -29,8 +29,8 @@ const Home: NextPage = () => {
         <title>Builderz Solana dApp Scaffold</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={styles.container}>
-        <div className="mockup-window border  bg-inherit p-[1.25rem]">
+      <div className={`${styles.container} `}>
+        <div className="mockup-window border bg-gray-200 dark:bg-gray-900 text-black dark:text-white  bg-inherit p-[1.25rem]">
           <div className="flex flex-col justify-center p-4 bg-inherit gap-4">
             <div className={styles.iconContainer}>
               <a

@@ -48,7 +48,7 @@ body {
 /* Fluid Fonts */
 
 body {
-  @apply: bg-white dark:bg-black;
+  @apply bg-white dark:bg-black;
   font-size: calc(16px + (16 - 16) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 400;

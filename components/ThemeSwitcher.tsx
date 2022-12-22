@@ -57,36 +57,25 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 
-export default function ThemeSwitcherComponent({ isDark, setIsDark }) {
+export default function ThemeSwitcherComponent({ isDark, setIsDark }: any) {
 
 
 
 
   return (
     <>
-      <div className={`${isDark ? "dark" : "light"} bg-gray-800`}>
-        <label>
-          <input
-            type="checkbox"
-            checked={isDark}
+      <FormControlLabel
+        label={""}
+        control={
+          <MaterialUISwitch
+            checked={isDark === true}
             onChange={() => {
               setIsDark(!isDark)
               document.documentElement.classList.toggle('dark')
             }}
           />
-          Dark mode
-        </label>
-      </div>
-
-      {/*       <FormControlLabel
-        label={""}
-        control={
-          <MaterialUISwitch
-            checked={theme.palette.mode === "dark" ? true : false}
-            onChange={(e) => props.themeChanger(e.target.checked)}
-          />
         }
-      /> */}
+      />
     </>
   );
 }
