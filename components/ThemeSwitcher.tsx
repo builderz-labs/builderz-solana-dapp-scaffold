@@ -1,11 +1,13 @@
+import * as React from "react";
+
 import {
   FormControlLabel,
   Switch,
 } from "@mui/material";
-import * as React from "react";
-import { useTheme } from "@mui/material/styles";
 
 import { styled } from '@mui/material/styles';
+import { useState } from 'react';
+import { useTheme } from "@mui/material/styles";
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -55,12 +57,28 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 }));
 
 
-export default function ThemeSwitcherComponent(props: { themeChanger: (useDark?: boolean) => void }) {
-  const theme = useTheme();
+export default function ThemeSwitcherComponent({ isDark, setIsDark }) {
+
+
+
 
   return (
     <>
-      <FormControlLabel
+      <div className={`${isDark ? "dark" : "light"} bg-gray-800`}>
+        <label>
+          <input
+            type="checkbox"
+            checked={isDark}
+            onChange={() => {
+              setIsDark(!isDark)
+              document.documentElement.classList.toggle('dark')
+            }}
+          />
+          Dark mode
+        </label>
+      </div>
+
+      {/*       <FormControlLabel
         label={""}
         control={
           <MaterialUISwitch
@@ -68,7 +86,7 @@ export default function ThemeSwitcherComponent(props: { themeChanger: (useDark?:
             onChange={(e) => props.themeChanger(e.target.checked)}
           />
         }
-      />
+      /> */}
     </>
   );
 }
