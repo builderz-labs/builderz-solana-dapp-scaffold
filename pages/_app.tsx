@@ -1,6 +1,8 @@
 import type { AppProps } from "next/app";
 import AppBar from "../components/AppBar";
 import "../styles/globals.css";
+import 'react-toastify/dist/ReactToastify.css'
+
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
@@ -16,7 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const prefersDarkMode = useMediaQuery("(prefers-color-scheme: dark)");
 
   const [theme, setTheme] = useState(themes.light);
-  
+
   // create react use effect hook that sets dark mode to OS-level preference on load
   useEffect(() => {
     prefersDarkMode && setTheme(themes.dark);
