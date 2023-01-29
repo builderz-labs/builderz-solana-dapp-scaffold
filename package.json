@@ -20,6 +20,7 @@
     "@solana/wallet-adapter-react-ui": "^0.9.22",
     "@solana/wallet-adapter-wallets": "^0.19.5",
     "@solana/web3.js": "^1.66.2",
+    "@tailwindcss/forms": "^0.5.3",
     "daisyui": "^2.42.0",
     "next": "^13",
     "next-themes": "^0.2.1",

@@ -1,12 +1,11 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
-
 import Box from "@mui/material/Box";
+import Drawer from "./Drawer";
+import { Logo } from "./Logo";
+import React from "react";
+import ThemeSwitcherComponent from "./ThemeSwitcher";
 import Toolbar from "@mui/material/Toolbar";
 import dynamic from "next/dynamic";
-import Drawer from "./Drawer";
-import ThemeSwitcherComponent from "./ThemeSwitcher";
-import { Logo } from "./Logo";
 
 const WalletMultiButtonDynamic = dynamic(
   async () =>
@@ -14,7 +13,7 @@ const WalletMultiButtonDynamic = dynamic(
   { ssr: false }
 );
 
-export default function PrimarySearchAppBar({ setTheme }: any) {
+export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any) {
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
       <AppBar
@@ -29,7 +28,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Drawer />
-            <Logo />
+            <Logo isDark={isDark} />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
             <div></div>
@@ -41,7 +40,7 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             }}
           >
             <div className="flex ml-4 items-center gap-2">
-              <ThemeSwitcherComponent themeChanger={setTheme} />
+              <ThemeSwitcherComponent isDark={isDark} setIsDark={setIsDark} />
               <WalletMultiButtonDynamic className="btn btn-outline glow my-4" />
             </div>
           </Box>
