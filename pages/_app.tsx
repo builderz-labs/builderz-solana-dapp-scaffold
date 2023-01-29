@@ -1,5 +1,8 @@
 import "../styles/globals.css";
 
+import 'react-toastify/dist/ReactToastify.css'
+
+
 import AppBar from "../components/AppBar";
 import type { AppProps } from "next/app";
 import ContextProvider from "../contexts/ContextProvider";
@@ -18,8 +21,6 @@ require("@solana/wallet-adapter-react-ui/styles.css");
 function MyApp({ Component, pageProps }: AppProps) {
   // Get OS-level preference for dark mode
   const [isDark, setIsDark] = useState(false);
-
-
 
 
   return (
