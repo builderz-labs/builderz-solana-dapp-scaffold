@@ -48,6 +48,10 @@ npm run dev or yarn dev (same here depending on what you chose above)
 ```
 
 ```bash
+remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""  
+```
+
+```bash
 npm run build or yarn build (production build)
 ```
 
