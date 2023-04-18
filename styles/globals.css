@@ -38,6 +38,11 @@ select {
   @apply text-[#43b083] dark:text-[#14F195];
 }
 
+.mymultibutton {
+  @apply bg-black text-white hover:text-black hover:bg-[#EEFD54]  !important;
+  border: 1px solid black !important;
+}
+
 body {
   font-family: 'Inter', sans-serif;
   display: flex;
@@ -104,7 +109,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Glow Button */
 .glow-on-hover {
-  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
+  @apply bg-black dark:bg-[#111] text-black dark:text-white;
   height: 50px;
   min-width: 150px;
   border: 1px solid gray;

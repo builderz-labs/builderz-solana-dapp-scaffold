@@ -4,20 +4,15 @@ import Head from "next/head";
 import Image from "next/image";
 import Modal from "../components/Modal";
 import type { NextPage } from "next";
-import dynamic from "next/dynamic";
 import styles from "../styles/Home.module.css";
 import { toast } from "react-toastify";
+import MyMultiButton from '../components/MyMultiButton';
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
 
 
 
-const WalletMultiButtonDynamic = dynamic(
-  async () =>
-    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  { ssr: false }
-);
 
 const Home: NextPage = () => {
   const notify = () =>
@@ -31,7 +26,7 @@ const Home: NextPage = () => {
       </Head>
       <div className={`${styles.container} `}>
         <div className="mockup-window border bg-gray-200 dark:bg-gray-900 text-black dark:text-white  bg-inherit p-[1.25rem]">
-          <div className="flex flex-col justify-center p-4 bg-inherit gap-4">
+          <div className="flex flex-col justify-center p-4 bg-inherit gap-10">
             <div className={styles.iconContainer}>
               <a
                 href="https://builderz.build"
@@ -40,7 +35,7 @@ const Home: NextPage = () => {
               >
                 {" "}
                 <Image
-                  src="/images/builderz-logo-b.png"
+                  src="/images/builderz-symbol.svg"
                   height={60}
                   width={50}
                   style={{
@@ -67,7 +62,7 @@ const Home: NextPage = () => {
                 Notify!
               </button>
               <Modal />
-              <WalletMultiButtonDynamic className="btn glow" />
+              <MyMultiButton />
             </div>
           </div>
         </div>

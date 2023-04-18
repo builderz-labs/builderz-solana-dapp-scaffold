@@ -5,19 +5,14 @@ import { Logo } from "./Logo";
 import React from "react";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
 import Toolbar from "@mui/material/Toolbar";
-import dynamic from "next/dynamic";
-
-const WalletMultiButtonDynamic = dynamic(
-  async () =>
-    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  { ssr: false }
-);
+import MyMultiButton from './MyMultiButton';
+import Link from 'next/link';
 
 export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any) {
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
       <AppBar
-        position="static" color="transparent" className="w-ful justify-between" elevation={0}
+        position="static" className="w-ful justify-between bg-white dark:bg-black" elevation={0}
         sx={{
           paddingTop: 2,
           paddingBottom: 2,
@@ -31,7 +26,9 @@ export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any
             <Logo isDark={isDark} />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
-            <div></div>
+            <div>
+              <Link href="/" className="text-[#000000] text-[18px] font-bold">Home</Link>
+            </div>
           </Box>
           <Box
             sx={{
@@ -41,7 +38,7 @@ export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any
           >
             <div className="flex ml-4 items-center gap-2">
               <ThemeSwitcherComponent isDark={isDark} setIsDark={setIsDark} />
-              <WalletMultiButtonDynamic className="btn btn-outline glow my-4" />
+              <MyMultiButton />
             </div>
           </Box>
         </Toolbar>
