@@ -44,6 +44,10 @@ npm i or yarn install (we suggest npm though as the packages were installed with
 ```
 
 ```bash
+remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""  
+```
+
+```bash
 npm run dev or yarn dev (same here depending on what you chose above)
 ```
 
