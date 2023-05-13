@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,7 +10,6 @@
 *::after {
   box-sizing: border-box;
 }
-
 
 #__next {
   width: 100%;
@@ -39,8 +38,13 @@ select {
   @apply text-[#43b083] dark:text-[#14F195];
 }
 
+.mymultibutton {
+  @apply bg-black text-white hover:text-black hover:bg-[#EEFD54]  !important;
+  border: 1px solid black !important;
+}
+
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
   display: flex;
   margin: 0;
   text-align: center;
@@ -49,6 +53,7 @@ body {
 /* Fluid Fonts */
 
 body {
+  @apply bg-white dark:bg-black;
   font-size: calc(16px + (16 - 16) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 400;
@@ -104,24 +109,24 @@ body::-webkit-scrollbar-thumb {
 
 /* Glow Button */
 .glow-on-hover {
-  @apply bg-[#fff] dark:bg-[#111];
+  @apply bg-black dark:bg-[#111] text-black dark:text-white;
   height: 50px;
   min-width: 150px;
   border: 1px solid gray;
   outline: none;
-  color: #fff;
+
   cursor: pointer;
   position: relative;
   z-index: 0;
   border-radius: 10px;
 }
 .glow {
+  @apply text-black dark:text-white;
   min-width: 150px;
   height: 50px;
   border: none;
   outline: none;
-  color: #fff;
-  background: transparent;
+
   cursor: pointer;
   position: relative;
   z-index: 0;
@@ -129,7 +134,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-on-hover:before {
-  content: "";
+  content: '';
   background: linear-gradient(
     45deg,
     #ff0000,
@@ -156,7 +161,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 .glow:before {
-  content: "";
+  content: '';
   background: linear-gradient(
     45deg,
     #ff0000,
@@ -205,9 +210,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-on-hover:after {
-  @apply bg-[#fff] dark:bg-[#111];
+  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
   z-index: -1;
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -216,9 +221,9 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 .glow:after {
-  @apply bg-[#fff] dark:bg-[#111];
+  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
   z-index: -1;
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;

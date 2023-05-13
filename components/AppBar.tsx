@@ -1,24 +1,18 @@
-import React from "react";
 import AppBar from "@mui/material/AppBar";
-
 import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import dynamic from "next/dynamic";
 import Drawer from "./Drawer";
-import ThemeSwitcherComponent from "./ThemeSwitcher";
 import { Logo } from "./Logo";
+import React from "react";
+import ThemeSwitcherComponent from "./ThemeSwitcher";
+import Toolbar from "@mui/material/Toolbar";
+import MyMultiButton from './MyMultiButton';
+import Link from 'next/link';
 
-const WalletMultiButtonDynamic = dynamic(
-  async () =>
-    (await import("@solana/wallet-adapter-react-ui")).WalletMultiButton,
-  { ssr: false }
-);
-
-export default function PrimarySearchAppBar({ setTheme }: any) {
+export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any) {
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
       <AppBar
-        position="static" color="transparent" className="w-ful justify-between" elevation={0}
+        position="static" className="w-ful justify-between bg-white dark:bg-black" elevation={0}
         sx={{
           paddingTop: 2,
           paddingBottom: 2,
@@ -29,10 +23,12 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
           >
             <Drawer />
-            <Logo />
+            <Logo isDark={isDark} />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
-            <div></div>
+            <div>
+              <Link href="/" className="text-[#000000] text-[18px] font-bold">Home</Link>
+            </div>
           </Box>
           <Box
             sx={{
@@ -41,8 +37,8 @@ export default function PrimarySearchAppBar({ setTheme }: any) {
             }}
           >
             <div className="flex ml-4 items-center gap-2">
-              <ThemeSwitcherComponent themeChanger={setTheme} />
-              <WalletMultiButtonDynamic className="btn btn-outline glow my-4" />
+              <ThemeSwitcherComponent isDark={isDark} setIsDark={setIsDark} />
+              <MyMultiButton />
             </div>
           </Box>
         </Toolbar>
