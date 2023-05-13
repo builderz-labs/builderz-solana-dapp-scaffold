@@ -1,5 +1,7 @@
+/* Importing Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
+/* Include Tailwind CSS */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,6 +13,7 @@
   box-sizing: border-box;
 }
 
+/* Next.js container */
 #__next {
   width: 100%;
   min-height: 100vh;
@@ -24,6 +27,7 @@ select {
   font: inherit;
 }
 
+/* Root variables */
 :root {
   --background-color: #1c1e21;
   --white: #ffffff;
@@ -31,28 +35,29 @@ select {
   --tw-color1-hover: #9333ea;
 }
 
+/* Navigation link styles */
 .navLink {
   list-style-type: none;
 }
+
+/* Active navigation link */
 .active {
   @apply text-[#43b083] dark:text-[#14F195];
 }
 
+/* Custom Wallet Button */
 .mymultibutton {
-  @apply bg-black text-white hover:text-black hover:bg-[#EEFD54]  !important;
+  @apply bg-black text-white hover:text-black hover:bg-builderz-blue !important;
   border: 1px solid black !important;
 }
 
+/* Body styles */
 body {
   font-family: 'Inter', sans-serif;
   display: flex;
   margin: 0;
   text-align: center;
-}
-
-/* Fluid Fonts */
-
-body {
+  /* Fluid Fonts */
   @apply bg-white dark:bg-black;
   font-size: calc(16px + (16 - 16) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
@@ -61,6 +66,7 @@ body {
   line-height: 135%;
 }
 
+/* Heading styles */
 h1 {
   font-size: calc(30px + (36 - 30) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
@@ -83,8 +89,7 @@ h3 {
   line-height: calc(28px + (32 - 28) * ((100vw - 320px) / (1280 - 320)));
 }
 
-/* Scrollbar */
-
+/* Scrollbar styles */
 /* width */
 body::-webkit-scrollbar {
   width: 8px;
@@ -93,12 +98,12 @@ body::-webkit-scrollbar {
 
 /* Track */
 body::-webkit-scrollbar-track {
-  @apply bg-transparent  dark:bg-[#03040e];
+  @apply bg-transparent dark:bg-[#03040e];
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
-  @apply bg-[#ffffff]  dark:bg-[#03040e];
+  @apply bg-[#ffffff] dark:bg-[#03040e];
   border-radius: 35px;
 }
 
@@ -107,7 +112,9 @@ body::-webkit-scrollbar-thumb {
   background: #555;
 }
 
-/* Glow Button */
+
+
+/* Glow Buttons */
 .glow-on-hover {
   @apply bg-black dark:bg-[#111] text-black dark:text-white;
   height: 50px;
@@ -242,4 +249,8 @@ body::-webkit-scrollbar-thumb {
   100% {
     background-position: 0 0;
   }
+}
+
+.css-i4bv87-MuiSvgIcon-root {
+  @apply text-black dark:text-white !important;
 }

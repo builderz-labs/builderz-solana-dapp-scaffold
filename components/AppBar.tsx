@@ -12,7 +12,7 @@ export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
       <AppBar
-        position="static" className="w-ful justify-between bg-white dark:bg-black" elevation={0}
+        position="static" className="w-full justify-between !bg-white !dark:bg-black !important" elevation={0}
         sx={{
           paddingTop: 2,
           paddingBottom: 2,
@@ -20,13 +20,13 @@ export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any
       >
         <Toolbar>
           <Box
-            sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+            sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "around" }}
           >
             <Drawer />
             <Logo isDark={isDark} />
           </Box>
           <Box sx={{ flexGrow: 1 }}>
-            <div>
+            <div className='hidden lg:inline'>
               <Link href="/" className="text-[#000000] text-[18px] font-bold">Home</Link>
             </div>
           </Box>

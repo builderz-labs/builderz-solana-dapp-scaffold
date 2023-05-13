@@ -10,8 +10,8 @@ module.exports = {
 
       },
       colors: {
-
-
+            "builderz-green": "#14f195",
+        "builderz-blue": "#00ffd5",
       },
       animation: {
 
