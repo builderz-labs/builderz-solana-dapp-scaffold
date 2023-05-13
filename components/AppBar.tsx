@@ -11,13 +11,8 @@ import Link from 'next/link';
 export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any) {
   return (
     <Box sx={{ flexGrow: 1 }} className="w-full">
-      <AppBar
-        position="static" className="w-full justify-between !bg-white !dark:bg-black !important" elevation={0}
-        sx={{
-          paddingTop: 2,
-          paddingBottom: 2,
-        }}
-      >
+      <div className="w-full p-2">
+
         <Toolbar>
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "around" }}
@@ -42,7 +37,7 @@ export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any
             </div>
           </Box>
         </Toolbar>
-      </AppBar>
+      </div>
     </Box>
   );
 }
