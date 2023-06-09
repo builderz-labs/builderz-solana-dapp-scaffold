@@ -3,16 +3,9 @@ import {
   ConnectionProvider,
   WalletProvider,
 } from "@solana/wallet-adapter-react";
-import {
-  SolflareWalletAdapter,
-  SolletExtensionWalletAdapter,
-  SolletWalletAdapter,
-  TorusWalletAdapter,
-} from "@solana/wallet-adapter-wallets";
 import { FC, ReactNode, useCallback, useMemo } from "react";
 
 import { WalletModalProvider as ReactUIWalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { clusterApiUrl } from "@solana/web3.js";
 
 export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   children,
@@ -20,14 +13,7 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   const network = WalletAdapterNetwork.Mainnet;
 
   const wallets = useMemo(
-    () => [
-      new SolflareWalletAdapter(),
-      new SolletWalletAdapter({ network }),
-      new SolletExtensionWalletAdapter({ network }),
-      new TorusWalletAdapter(),
-      // new LedgerWalletAdapter(),
-      // new SlopeWalletAdapter(),
-    ],
+    () => [],
     [network]
   );
 
