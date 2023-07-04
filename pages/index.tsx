@@ -6,13 +6,9 @@ import Modal from "../components/Modal";
 import type { NextPage } from "next";
 import styles from "../styles/Home.module.css";
 import { toast } from "react-toastify";
-import MyMultiButton from '../components/MyMultiButton';
 
 // Default styles that can be overridden by your app
 require("@solana/wallet-adapter-react-ui/styles.css");
-
-
-
 
 const Home: NextPage = () => {
   const notify = () =>
@@ -25,7 +21,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={`${styles.container} `}>
-        <div className="mockup-window border bg-gray-200 dark:bg-gray-900 text-black dark:text-white  bg-inherit p-[1.25rem]">
+        <div className=" dark:bg-black text-black dark:text-white  bg-inherit p-[1.25rem]">
           <div className="flex flex-col justify-center p-4 bg-inherit gap-10">
             <div className={styles.iconContainer}>
               <a
@@ -62,7 +58,6 @@ const Home: NextPage = () => {
                 Notify!
               </button>
               <Modal />
-              <MyMultiButton />
             </div>
           </div>
         </div>

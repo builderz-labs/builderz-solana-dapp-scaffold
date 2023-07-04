@@ -6,8 +6,7 @@ import {
 } from "@mui/material";
 
 import { styled } from '@mui/material/styles';
-import { useState } from 'react';
-import { useTheme } from "@mui/material/styles";
+
 
 const MaterialUISwitch = styled(Switch)(({ theme }) => ({
   width: 62,
@@ -58,10 +57,6 @@ const MaterialUISwitch = styled(Switch)(({ theme }) => ({
 
 
 export default function ThemeSwitcherComponent({ isDark, setIsDark }: any) {
-
-
-
-
   return (
     <>
       <FormControlLabel

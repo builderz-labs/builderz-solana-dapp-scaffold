@@ -2,26 +2,19 @@ import "../styles/globals.css";
 
 import 'react-toastify/dist/ReactToastify.css'
 
-
 import AppBar from "../components/AppBar";
 import type { AppProps } from "next/app";
 import ContextProvider from "../contexts/ContextProvider";
 import CssBaseline from "@mui/material/CssBaseline";
 import { ToastContainer } from 'react-toastify';
 import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
-import { useMediaQuery } from "@mui/material";
 import { useState } from 'react';
 
 require("@solana/wallet-adapter-react-ui/styles.css");
 
-
-
-
-
 function MyApp({ Component, pageProps }: AppProps) {
   // Get OS-level preference for dark mode
   const [isDark, setIsDark] = useState(false);
-
 
   return (
     <ContextProvider>
@@ -40,6 +33,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           pauseOnFocusLoss
           draggable
           pauseOnHover
+          theme="dark"
         />
       </WalletModalProvider>
     </ContextProvider>
