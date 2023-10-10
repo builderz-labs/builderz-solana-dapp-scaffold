@@ -48,7 +48,7 @@ const Home: NextPage = () => {
                 alt="sol"
               />
             </div>
-            <h1 className="text-black dark:text-white">Hello Solana, meet Builderz 👋</h1>
+            <h1 className="text-black dark:text-white">Hello Solana, meet Builderz.dev 👋</h1>
             <p className={`${styles.explain} text-black dark:text-white`}>
               Explore what you can do with Builderz&rsquo; brand new{" "}
               <b>Builderz Solana dApp Scaffold</b>
