@@ -1,18 +1,20 @@
-import AppBar from "@mui/material/AppBar";
+'use client'
+
 import Box from "@mui/material/Box";
 import Drawer from "./Drawer";
 import { Logo } from "./Logo";
-import React from "react";
+import React, { useState } from "react";
 import ThemeSwitcherComponent from "./ThemeSwitcher";
 import Toolbar from "@mui/material/Toolbar";
 import MyMultiButton from './MyMultiButton';
 import Link from 'next/link';
 
-export default function PrimarySearchAppBar({ setTheme, setIsDark, isDark }: any) {
+export default function PrimarySearchAppBar() {
+  // Get OS-level preference for dark mode
+  const [isDark, setIsDark] = useState(false);
   return (
-    <Box sx={{ flexGrow: 1 }} className="w-full max-w-7xl mx-auto">
-      <div className="w-full p-2">
-
+    <Box sx={{ flexGrow: 1 }} className="w-full max-w-7xl mx-auto fixed top-4 left-1/2 -translate-x-1/2">
+      <div className="w-full ">
         <Toolbar>
           <Box
             sx={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}

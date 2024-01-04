@@ -14,10 +14,10 @@
 }
 
 /* Next.js container */
-#__next {
+/* #__next {
   width: 100%;
   min-height: 100vh;
-}
+} */
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -28,12 +28,12 @@ select {
 }
 
 /* Root variables */
-:root {
-  --background-color: #1c1e21;
+/* :root {
+  --background-color: #121314;
   --white: #ffffff;
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;
-}
+} */
 
 /* Navigation link styles */
 .navLink {
@@ -54,11 +54,10 @@ select {
 /* Body styles */
 body {
   font-family: 'Inter', sans-serif;
-  display: flex;
-  margin: 0;
-  text-align: center;
+    @apply bg-white dark:bg-black text-black dark:text-white;
+  /* margin: 0; */
+  height: 100vh;
   /* Fluid Fonts */
-  @apply bg-white dark:bg-black;
   font-size: calc(16px + (16 - 16) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 400;

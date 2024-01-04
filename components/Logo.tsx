@@ -1,3 +1,4 @@
+'use client'
 import Brand from "../public/images/builderz-black.svg";
 import BrandW from "../public/images/builderz-white.svg";
 import Image from "next/image";
