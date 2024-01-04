@@ -54,7 +54,7 @@ select {
 /* Body styles */
 body {
   font-family: 'Inter', sans-serif;
-    @apply bg-white dark:bg-black text-black dark:text-white;
+    @apply bg-white dark:bg-black text-black dark:text-white selection:bg-builderz-blue selection:text-white selection:px-4 dark:selection:text-black;
   /* margin: 0; */
   height: 100vh;
   /* Fluid Fonts */
@@ -111,6 +111,10 @@ body::-webkit-scrollbar-thumb {
   background: #555;
 }
 
+/* NavigationLink Hover */
+.navLink {
+  @apply px-2 py-1 rounded-md hover:text-[#43b083] dark:hover:text-[#14F195] bg-opacity-20;
+}
 
 
 /* Glow Buttons */

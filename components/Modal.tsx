@@ -28,7 +28,7 @@ export default function TransitionsModal() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <div className='flex flex-row items-start justify-start gap-8'>
       <button onClick={() => toast('My first toast')} className="btn glow-on-hover">
         Notify!
       </button>

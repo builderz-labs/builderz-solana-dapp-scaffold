@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Modal from '../components/Modal';
+import Modal from '../../components/Modal';
 
 const Index: React.FC = async () => {
 

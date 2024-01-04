@@ -8,7 +8,6 @@ import '../styles/mapbox.css';
 
 // TODO: Change to other toast provider
 import ContextProvider from '../contexts/ContextProvider';
-import { Toaster } from 'sonner';
 
 // Providers
 
@@ -30,7 +29,6 @@ const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children, session }) => {
     <ContextProvider>
       {children}
       {/* Change Notification settings here */}
-      <Toaster position="top-right" />
     </ContextProvider>
 
   );
