@@ -4,9 +4,9 @@ import Box from "@mui/material/Box";
 import Drawer from "../Drawer";
 import { Logo } from "../Logo";
 import React, { useContext, useState } from "react";
-import ThemeSwitcherComponent from "../ThemeSwitcher";
+import ThemeSwitcherComponent from "./ThemeSwitcher";
 import Toolbar from "@mui/material/Toolbar";
-import MyMultiButton from '../MyMultiButton';
+import MyMultiButton from './MyMultiButton';
 import Link from 'next/link';
 import { ThemeContext } from '../../contexts/ThemeProvider';
 
