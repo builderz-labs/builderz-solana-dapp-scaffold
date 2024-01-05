@@ -6,7 +6,7 @@ const Index: React.FC = async () => {
   return (
     <div className='w-full h-screen flex justify-center items-center'>
       {/* Intro Content */}
-      <div className="max-w-md bg-white dark:bg-gray-900 text-black dark:text-white rounded-lg shadow-lg border border-0.5 border-gray-300 dark:border-gray-800 p-[1.25rem]">
+      <div className="max-w-md  text-black dark:text-white rounded-lg shadow-lg border border-0.5 border-gray-300 dark:border-gray-800 p-[1.25rem]">
         <div className="flex flex-col justify-center p-4 bg-inherit gap-10">
           <div className='flex flex-row items-center justify-center gap-8'>
             <a

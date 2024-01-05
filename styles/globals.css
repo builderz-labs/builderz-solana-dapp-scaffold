@@ -54,7 +54,7 @@ select {
 /* Body styles */
 body {
   font-family: 'Inter', sans-serif;
-    @apply bg-white dark:bg-black text-black dark:text-white selection:bg-builderz-blue selection:text-white selection:px-4 dark:selection:text-black;
+    @apply bg-light-mesh dark:bg-mesh text-black dark:text-white selection:bg-builderz-blue selection:text-white selection:px-4 dark:selection:text-black;
   /* margin: 0; */
   height: 100vh;
   /* Fluid Fonts */
@@ -119,7 +119,7 @@ body::-webkit-scrollbar-thumb {
 
 /* Glow Buttons */
 .glow-on-hover {
-  @apply bg-black dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white hover:text-white;
   height: 50px;
   min-width: 150px;
   border: 1px solid gray;
@@ -220,7 +220,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-on-hover:after {
-  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white;
   z-index: -1;
   content: '';
   position: absolute;
@@ -231,7 +231,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 .glow:after {
-  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white;
   z-index: -1;
   content: '';
   position: absolute;
@@ -256,4 +256,12 @@ body::-webkit-scrollbar-thumb {
 
 .css-i4bv87-MuiSvgIcon-root {
   @apply text-black dark:text-white !important;
+}
+
+.meshBg {
+  background: #0a0924; background-image: radial-gradient(at 47.0% 96.0%, #151b40 0px, transparent 50%),radial-gradient(at 61.0% 15.0%, #09162b 0px, transparent 50%),radial-gradient(at 8.0% 16.0%, #0f1930 0px, transparent 50%),radial-gradient(at 85.0% 28.0%, #110c3d 0px, transparent 50%),radial-gradient(at 81.0% 66.0%, #060d1f 0px, transparent 50%)
+}
+
+.lightMeshBg {
+  background: #e6e6f0; background-image: radial-gradient(at 47.0% 96.0%, #a8abbd 0px, transparent 50%),radial-gradient(at 61.0% 15.0%, #d5dde8 0px, transparent 50%),radial-gradient(at 8.0% 16.0%, #c3ccde 0px, transparent 50%),radial-gradient(at 85.0% 28.0%, #b2abeb 0px, transparent 50%),radial-gradient(at 81.0% 66.0%, #ccd2e0 0px, transparent 50%)
 }

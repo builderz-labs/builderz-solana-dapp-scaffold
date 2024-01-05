@@ -3,16 +3,13 @@
 import React from 'react';
 
 import '../styles/globals.css';
-import 'react-toastify/dist/ReactToastify.css';
-import '../styles/mapbox.css';
+
 
 // TODO: Change to other toast provider
 import ContextProvider from '../contexts/ContextProvider';
+import { ThemeProvider } from '../contexts/ThemeProvider';
 
 // Providers
-
-
-require('@solana/wallet-adapter-react-ui/styles.css');
 
 /**
  *
@@ -21,14 +18,14 @@ require('@solana/wallet-adapter-react-ui/styles.css');
  */
 type LayoutWrapperProps = {
   children: React.ReactNode;
-  session: any;
 };
 
-const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children, session }) => {
+const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children }) => {
   return (
     <ContextProvider>
-      {children}
-      {/* Change Notification settings here */}
+      <ThemeProvider >
+        {children}
+      </ThemeProvider>
     </ContextProvider>
 
   );
