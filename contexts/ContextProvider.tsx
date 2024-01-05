@@ -1,21 +1,17 @@
-import { WalletAdapterNetwork, WalletError } from "@solana/wallet-adapter-base";
+'use client';
+
+import { WalletError } from '@solana/wallet-adapter-base';
 import {
   ConnectionProvider,
   WalletProvider,
-} from "@solana/wallet-adapter-react";
-import { FC, ReactNode, useCallback, useMemo } from "react";
-
-import { WalletModalProvider as ReactUIWalletModalProvider } from "@solana/wallet-adapter-react-ui";
+} from '@solana/wallet-adapter-react';
+import { FC, ReactNode, useCallback, useMemo } from 'react';
+import { WalletModalProvider as ReactUIWalletModalProvider } from '@solana/wallet-adapter-react-ui';
 
 export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   children,
 }) => {
-  const network = WalletAdapterNetwork.Mainnet;
-
-  const wallets = useMemo(
-    () => [],
-    [network]
-  );
+  const wallets = useMemo(() => [], []);
 
   const onError = useCallback((error: WalletError) => {
     console.error(error);
@@ -23,7 +19,7 @@ export const WalletContextProvider: FC<{ children: ReactNode }> = ({
 
   return (
     <ConnectionProvider endpoint={process.env.NEXT_PUBLIC_HELIUS_URL!}>
-      <WalletProvider wallets={wallets} onError={onError} autoConnect={true}>
+      <WalletProvider wallets={wallets} onError={onError} autoConnect={false}>
         <ReactUIWalletModalProvider>{children}</ReactUIWalletModalProvider>
       </WalletProvider>
     </ConnectionProvider>

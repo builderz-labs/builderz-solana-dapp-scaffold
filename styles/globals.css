@@ -14,10 +14,10 @@
 }
 
 /* Next.js container */
-#__next {
+/* #__next {
   width: 100%;
   min-height: 100vh;
-}
+} */
 
 /* Inherit fonts for inputs and buttons */
 input,
@@ -28,12 +28,12 @@ select {
 }
 
 /* Root variables */
-:root {
-  --background-color: #1c1e21;
+/* :root {
+  --background-color: #121314;
   --white: #ffffff;
   --tw-color1: #a855f7;
   --tw-color1-hover: #9333ea;
-}
+} */
 
 /* Navigation link styles */
 .navLink {
@@ -54,11 +54,10 @@ select {
 /* Body styles */
 body {
   font-family: 'Inter', sans-serif;
-  display: flex;
-  margin: 0;
-  text-align: center;
+    @apply bg-light-mesh dark:bg-mesh text-black dark:text-white selection:bg-builderz-blue selection:text-white selection:px-4 dark:selection:text-black;
+  /* margin: 0; */
+  height: 100vh;
   /* Fluid Fonts */
-  @apply bg-white dark:bg-black;
   font-size: calc(16px + (16 - 16) * ((100vw - 320px) / (1280 - 320)));
   font-style: normal;
   font-weight: 400;
@@ -112,11 +111,15 @@ body::-webkit-scrollbar-thumb {
   background: #555;
 }
 
+/* NavigationLink Hover */
+.navLink {
+  @apply px-2 py-1 rounded-md hover:text-[#43b083] dark:hover:text-[#14F195] bg-opacity-20;
+}
 
 
 /* Glow Buttons */
 .glow-on-hover {
-  @apply bg-black dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white hover:text-white;
   height: 50px;
   min-width: 150px;
   border: 1px solid gray;
@@ -217,7 +220,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .glow-on-hover:after {
-  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white;
   z-index: -1;
   content: '';
   position: absolute;
@@ -228,7 +231,7 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 .glow:after {
-  @apply bg-[#fff] dark:bg-[#111] text-black dark:text-white;
+  @apply bg-transparent text-black dark:text-white;
   z-index: -1;
   content: '';
   position: absolute;
@@ -253,4 +256,12 @@ body::-webkit-scrollbar-thumb {
 
 .css-i4bv87-MuiSvgIcon-root {
   @apply text-black dark:text-white !important;
+}
+
+.meshBg {
+  background: #0a0924; background-image: radial-gradient(at 47.0% 96.0%, #151b40 0px, transparent 50%),radial-gradient(at 61.0% 15.0%, #09162b 0px, transparent 50%),radial-gradient(at 8.0% 16.0%, #0f1930 0px, transparent 50%),radial-gradient(at 85.0% 28.0%, #110c3d 0px, transparent 50%),radial-gradient(at 81.0% 66.0%, #060d1f 0px, transparent 50%)
+}
+
+.lightMeshBg {
+  background: #e6e6f0; background-image: radial-gradient(at 47.0% 96.0%, #a8abbd 0px, transparent 50%),radial-gradient(at 61.0% 15.0%, #d5dde8 0px, transparent 50%),radial-gradient(at 8.0% 16.0%, #c3ccde 0px, transparent 50%),radial-gradient(at 85.0% 28.0%, #b2abeb 0px, transparent 50%),radial-gradient(at 81.0% 66.0%, #ccd2e0 0px, transparent 50%)
 }

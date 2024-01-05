@@ -1,3 +1,4 @@
+"use client"
 import * as React from 'react';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
@@ -6,6 +7,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import { toast } from 'sonner';
 
 const style = {
   position: 'absolute' as 'absolute',
@@ -26,7 +28,10 @@ export default function TransitionsModal() {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <div className='flex flex-row items-start justify-start gap-8'>
+      <button onClick={() => toast('My first toast')} className="btn glow-on-hover">
+        Notify!
+      </button>
       <Button className="btn glow-on-hover" onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
