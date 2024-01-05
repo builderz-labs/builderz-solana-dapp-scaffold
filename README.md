@@ -1,4 +1,4 @@
-# Builderz Solana dApp Scaffold (Nextjs13, Typescript, TailwindCSS, MaterialUI, web3.js)
+# Builderz Solana dApp Scaffold (Nextjs14, App Diretory, Typescript, TailwindCSS, MaterialUI, web3.js)
 
 This is our open source [Next.js](https://nextjs.org/) , [Solana](https://github.com/solana-labs ) dApp Scaffold for the community and whole ecosystem - without much fluff and just the essentials. 💪
 
