@@ -1,13 +1,10 @@
+import React from "react";
 
-
-import React from 'react';
-
-import '../styles/globals.css';
-
+import "../styles/globals.css";
 
 // TODO: Change to other toast provider
-import ContextProvider from '../contexts/ContextProvider';
-import { ThemeProvider } from '../contexts/ThemeProvider';
+import ContextProvider from "../contexts/ContextProvider";
+import { ThemeProvider } from "../contexts/ThemeProvider";
 
 // Providers
 
@@ -23,11 +20,8 @@ type LayoutWrapperProps = {
 const LayoutWrapper: React.FC<LayoutWrapperProps> = ({ children }) => {
   return (
     <ContextProvider>
-      <ThemeProvider >
-        {children}
-      </ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </ContextProvider>
-
   );
 };
 

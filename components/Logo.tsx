@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Brand from "../public/images/builderz-black.svg";
 import BrandW from "../public/images/builderz-white.svg";
 import Image from "next/image";
@@ -6,8 +6,6 @@ import Link from "next/link";
 import React from "react";
 
 export const Logo = ({ isDark }: any) => {
-
-
   return (
     <Link href="/" passHref>
       <Image

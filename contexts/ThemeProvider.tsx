@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import React, { createContext, useState, ReactNode } from 'react';
+import React, { createContext, useState, ReactNode } from "react";
 
 interface ThemeContextProps {
   isDark: boolean;
@@ -9,7 +9,7 @@ interface ThemeContextProps {
 
 export const ThemeContext = createContext<ThemeContextProps>({
   isDark: false,
-  setIsDark: () => { },
+  setIsDark: () => {},
 });
 
 interface ThemeProviderProps {

@@ -1,12 +1,12 @@
-'use client';
+"use client";
 
-import { WalletError } from '@solana/wallet-adapter-base';
+import { WalletError } from "@solana/wallet-adapter-base";
 import {
   ConnectionProvider,
   WalletProvider,
-} from '@solana/wallet-adapter-react';
-import { FC, ReactNode, useCallback, useMemo } from 'react';
-import { WalletModalProvider as ReactUIWalletModalProvider } from '@solana/wallet-adapter-react-ui';
+} from "@solana/wallet-adapter-react";
+import { FC, ReactNode, useCallback, useMemo } from "react";
+import { WalletModalProvider as ReactUIWalletModalProvider } from "@solana/wallet-adapter-react-ui";
 
 export const WalletContextProvider: FC<{ children: ReactNode }> = ({
   children,

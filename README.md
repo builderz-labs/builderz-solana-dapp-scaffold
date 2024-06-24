@@ -1,6 +1,6 @@
 # Builderz Solana dApp Scaffold (Nextjs14, App Diretory, Typescript, TailwindCSS, MaterialUI, web3.js)
 
-This is our open source [Next.js](https://nextjs.org/) , [Solana](https://github.com/solana-labs ) dApp Scaffold for the community and whole ecosystem - without much fluff and just the essentials. 💪
+This is our open source [Next.js](https://nextjs.org/) , [Solana](https://github.com/solana-labs) dApp Scaffold for the community and whole ecosystem - without much fluff and just the essentials. 💪
 
 Feel free to use it as a starting point for your next Solana project - we will and already use it for our developments.
 
@@ -12,9 +12,9 @@ We didn't want to include too much as from our experience we tend to delete most
 
 You can find a preview below:
 
-Responsive                     |  Desktop
-:-------------------------:|:-------------------------:
-![Builderz Scaffold Mobile](scaffold-mobile.png)  |  ![Builderz Scaffold Desktop](scaffold-desktop.png)
+|                    Responsive                    |                      Desktop                       |
+| :----------------------------------------------: | :------------------------------------------------: |
+| ![Builderz Scaffold Mobile](scaffold-mobile.png) | ![Builderz Scaffold Desktop](scaffold-desktop.png) |
 
 ## Packages included and set up
 
@@ -44,7 +44,7 @@ npm i or yarn install (we suggest npm though as the packages were installed with
 ```
 
 ```bash
-remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""  
+remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""
 ```
 
 ```bash
@@ -52,7 +52,7 @@ npm run dev or yarn dev (same here depending on what you chose above)
 ```
 
 ```bash
-remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""  
+remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""
 ```
 
 ```bash
@@ -78,9 +78,6 @@ To learn more about Solana and Next.js, take a look at the following resources:
 - [Rust Anchor Documentation](https://docs.rs/anchor-lang/latest/anchor_lang/) - learn about Solana features.
 - [Material-UI Getting Started](https://mui.com/material-ui/getting-started/overview/) - learn about Material-UI features.
 - [TailwindCSS Documentation](https://tailwindcss.com/docs/guides/nextjs) - learn about TailwindCSS features.
-
-
-
 
 You can check out [the Cynova GitHub organization](https://github.com/cynova-enterprise) - your feedback and contributions are welcome!
 

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import * as React from "react";
 import Box from "@mui/material/Box";
@@ -12,7 +12,7 @@ import ListItemText from "@mui/material/ListItemText";
 
 import { IconButton, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
-import HomeIcon from '@mui/icons-material/Home';
+import HomeIcon from "@mui/icons-material/Home";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 
@@ -26,24 +26,23 @@ export default function SwipeableTemporaryDrawer() {
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
-      (event: React.KeyboardEvent | React.MouseEvent) => {
-        if (
-          event &&
-          event.type === "keydown" &&
-          ((event as React.KeyboardEvent).key === "Tab" ||
-            (event as React.KeyboardEvent).key === "Shift")
-        ) {
-          return;
-        }
+    (event: React.KeyboardEvent | React.MouseEvent) => {
+      if (
+        event &&
+        event.type === "keydown" &&
+        ((event as React.KeyboardEvent).key === "Tab" ||
+          (event as React.KeyboardEvent).key === "Shift")
+      ) {
+        return;
+      }
 
-        setState({ ...state, [anchor]: open });
-      };
+      setState({ ...state, [anchor]: open });
+    };
 
   const list = (anchor: Anchor) => (
     <Box
       sx={{
         width: anchor === "top" || anchor === "bottom" ? "auto" : 250,
-
       }}
       role="presentation"
       onClick={toggleDrawer(anchor, false)}
@@ -54,7 +53,7 @@ export default function SwipeableTemporaryDrawer() {
           variant="h6"
           noWrap
           component="div"
-          sx={{ display: { xs: 'none', sm: 'block' } }}
+          sx={{ display: { xs: "none", sm: "block" } }}
           className="my-5 text-start pl-5"
         >
           Builderz
@@ -78,7 +77,7 @@ export default function SwipeableTemporaryDrawer() {
   );
 
   return (
-    <div >
+    <div>
       {(["left"] as const).map((anchor) => (
         <React.Fragment key={anchor}>
           {" "}
@@ -89,17 +88,15 @@ export default function SwipeableTemporaryDrawer() {
             aria-label="open drawer"
             sx={{ mr: 2 }}
             onClick={toggleDrawer(anchor, true)}
-            className='inline lg:hidden'
+            className="inline lg:hidden"
           >
             <MenuIcon />
           </IconButton>
           <SwipeableDrawer
-
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             onOpen={toggleDrawer(anchor, true)}
-
           >
             {list(anchor)}
             <div className="flex flex-col gap-0.5 justify-center items-end mt-auto  mx-2">
