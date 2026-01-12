@@ -28,7 +28,7 @@ Built for the community by [Builderz](https://builderz.dev).
 
 ### Prerequisites
 
-- Node.js 20+
+- Node.js 24+ (Next.js 16 requires Node.js 20.9.0 minimum)
 - pnpm (recommended)
 
 ### Installation
