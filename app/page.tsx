@@ -47,7 +47,7 @@ export default function Home() {
           style={{ animationDelay: "300ms" }}
         >
           A modern, minimal scaffold for building Solana dApps with{" "}
-          <span className="text-foreground font-medium">Next.js 15</span>,{" "}
+          <span className="text-foreground font-medium">Next.js 16</span>,{" "}
           <span className="text-foreground font-medium">Tailwind CSS v4</span>,
           and <span className="text-foreground font-medium">shadcn/ui</span>.
         </p>

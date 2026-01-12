@@ -1,6 +1,6 @@
 # Builderz Solana dApp Scaffold
 
-A modern, minimal [Solana](https://solana.com) dApp scaffold built with Next.js 15, Tailwind CSS v4, and shadcn/ui. Features a polished design system with 2026 aesthetics including glassmorphism, micro-animations, and a unified component library.
+A modern, minimal [Solana](https://solana.com) dApp scaffold built with Next.js 16, Tailwind CSS v4, and shadcn/ui. Features a polished design system with 2026 aesthetics including glassmorphism, micro-animations, and a unified component library.
 
 Built for the community by [Builderz](https://builderz.dev).
 
@@ -16,7 +16,7 @@ Built for the community by [Builderz](https://builderz.dev).
 
 ## Stack
 
-- **Next.js 15** - React framework with App Router
+- **Next.js 16** - React framework with App Router and Turbopack
 - **React 19** - Latest React with concurrent features
 - **Tailwind CSS v4** - CSS-first configuration
 - **shadcn/ui** - Accessible component primitives
