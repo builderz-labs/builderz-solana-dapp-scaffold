@@ -1,86 +1,188 @@
-# Builderz Solana dApp Scaffold (Nextjs14, App Diretory, Typescript, TailwindCSS, MaterialUI, web3.js)
+# Builderz Solana dApp Scaffold
 
-This is our open source [Next.js](https://nextjs.org/) , [Solana](https://github.com/solana-labs) dApp Scaffold for the community and whole ecosystem - without much fluff and just the essentials. 💪
+A modern, minimal [Solana](https://solana.com) dApp scaffold built with Next.js 15, Tailwind CSS v4, and shadcn/ui. Features a polished design system with 2026 aesthetics including glassmorphism, micro-animations, and a unified component library.
 
-Feel free to use it as a starting point for your next Solana project - we will and already use it for our developments.
+Built for the community by [Builderz](https://builderz.dev).
 
-Also feel free to send us feedback, open an issue or even PR and contribute by creating your own components, refactoring or other improvements.
+## Features
 
-The Scaffold has Material-UI v5 theme activated, detecting your devices preferred color scheme and ready to set with a dark/light mode schwitch in the AppBar.tsx.
+- **Modern Design System** - Glassmorphism, soft UI, and micro-delight animations
+- **System Theme Detection** - Automatic dark/light mode based on OS preference
+- **Unified Button Styles** - Consistent button variants (glow, soft, glass, outline)
+- **Polished Wallet Integration** - Styled wallet modal and dropdown
+- **Responsive Layout** - Mobile-first design with smooth transitions
+- **Developer Ready** - Clean architecture, TypeScript, and ESLint configured
 
-We didn't want to include too much as from our experience we tend to delete most stuff we found in a scaffold.
+## Stack
 
-You can find a preview below:
-
-|                    Responsive                    |                      Desktop                       |
-| :----------------------------------------------: | :------------------------------------------------: |
-| ![Builderz Scaffold Mobile](scaffold-mobile.png) | ![Builderz Scaffold Desktop](scaffold-desktop.png) |
-
-## Packages included and set up
-
-- Nextjs13 ("old" folder structure using pages - we will release an "app" branch as soon as it's more stable)
-- Typescript (tsconfig.json set up and ready to go)
-- Material-UI (Dark/Light Mode, Preferred Mode, Switch in AppBar, layout.tsx as well as themes.tsx with predefined dark/light theme.s)
-- react-dom ()
-- Solana web3.js (Solana Wallet Adapter with auto detect of installed wallet extensions)
-- TailwindCSS (set up and ready to go)
-- Daisy-UI
-
-Furthermore you will find a globals.css file with predefined settings. Next to the basics you mostly want to set, we also added pre-defined so called "fluid fonts" for all headings and body text. According to the values you tweak, your fonts will scale according to your device width and resolution.
-This means you wont have to set any TailwindCSS fontSizes in your work unless you want something look different than it normally does.
-
-You will also find the CSS for two variations of the Button styling, "glow" and "glow-on-hover" - just tweak them to your needs and add one of those classes to your buttons if you like.
-
-## Feel free to use it as a starting point for your next Solana project
-
-Also feel free to send us feedback, open an issue or even PR and contribute by creating your own components, refactoring or other improvements.
+- **Next.js 15** - React framework with App Router
+- **React 19** - Latest React with concurrent features
+- **Tailwind CSS v4** - CSS-first configuration
+- **shadcn/ui** - Accessible component primitives
+- **next-themes** - Dark/light/system theme support
+- **Solana Wallet Adapter** - Multi-wallet support
+- **Lucide Icons** - Beautiful, consistent icons
 
 ## Getting Started
 
-Create a project using this example:
+### Prerequisites
+
+- Node.js 20+
+- pnpm (recommended)
+
+### Installation
 
 ```bash
-npm i or yarn install (we suggest npm though as the packages were installed with it)
+# Clone the repository
+git clone https://github.com/builderz-labs/builderz-solana-dapp-scaffold.git
+cd builderz-solana-dapp-scaffold
+
+# Install dependencies
+pnpm install
+
+# Set up environment
+cp .env.example .env
+# Edit .env and add your RPC endpoint (e.g., from Helius)
+
+# Start development server
+pnpm dev
 ```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Scripts
 
 ```bash
-remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""
+pnpm dev          # Start development server
+pnpm build        # Production build
+pnpm start        # Start production server
+pnpm lint         # Run ESLint
+pnpm format       # Check formatting
+pnpm format:fix   # Fix formatting
 ```
+
+## Project Structure
+
+```
+├── app/
+│   ├── layout.tsx        # Root layout with providers
+│   ├── providers.tsx     # Theme + Wallet providers
+│   └── page.tsx          # Home page
+├── components/
+│   ├── ui/               # shadcn/ui components (button, sheet)
+│   ├── layout/           # Header, footer, theme toggle, mobile nav
+│   └── wallet/           # Wallet button wrapper
+├── contexts/
+│   └── ContextProvider.tsx  # Solana wallet context
+├── lib/
+│   └── utils.ts          # Utility functions (cn)
+└── styles/
+    └── globals.css       # Design system & Tailwind v4 config
+```
+
+## Design System
+
+### CSS Utilities
+
+The scaffold includes a comprehensive set of CSS utilities in `globals.css`:
+
+```css
+/* Backgrounds */
+.bg-mesh              /* Auto-detecting mesh gradient */
+
+/* Glassmorphism */
+.glass                /* Frosted glass effect */
+.glass-strong         /* Stronger blur */
+
+/* Glow Effects */
+.glow-green           /* Brand green glow */
+.glow-blue            /* Brand blue glow */
+.text-glow-green      /* Text shadow glow */
+
+/* Animations */
+.animate-fade-in      /* Fade in */
+.animate-fade-in-up   /* Fade in from below */
+.animate-float        /* Floating animation */
+.animate-glow-pulse   /* Pulsing glow */
+
+/* 2026 Trends */
+.soft-ui              /* Neumorphic card */
+.soft-ui-button       /* Neumorphic button */
+.micro-bounce         /* Tactile button feedback */
+.card-lift            /* Hover lift effect */
+.border-glow          /* Interactive border */
+```
+
+### Button Variants
+
+```tsx
+import { Button } from "@/components/ui/button"
+
+<Button variant="default">Primary</Button>
+<Button variant="glow">Glowing</Button>
+<Button variant="soft">Soft UI</Button>
+<Button variant="glass">Glass</Button>
+<Button variant="outline">Outlined</Button>
+<Button variant="ghost">Ghost</Button>
+```
+
+### Theme Toggle
+
+The theme cycles through: **System** → **Light** → **Dark**
+
+System preference is respected by default, with CSS media queries ensuring correct theme on initial load.
+
+## Adding Components
+
+Use the shadcn CLI to add new components:
 
 ```bash
-npm run dev or yarn dev (same here depending on what you chose above)
+pnpm dlx shadcn@latest add dialog
+pnpm dlx shadcn@latest add dropdown-menu
+pnpm dlx shadcn@latest add input
 ```
 
-```bash
-remove .example from .env.example and add your RPC endpoint to NEXT_PUBLIC_HELIUS_URL=""
+## Environment Variables
+
+| Variable                 | Description                                    |
+| ------------------------ | ---------------------------------------------- |
+| `NEXT_PUBLIC_HELIUS_URL` | Solana RPC endpoint (defaults to mainnet-beta) |
+
+## Customization
+
+### Brand Colors
+
+Edit the theme variables in `styles/globals.css`:
+
+```css
+@theme {
+  --color-builderz-green: #14f195;
+  --color-builderz-blue: #00ffd5;
+}
 ```
 
-```bash
-npm run build or yarn build (production build)
-```
+### Mesh Gradient
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-If you want to add a new page you just create another file in `pages` folder - we created a `basics.tsx` as an example for you, and also a `blog` folder for a dynamic routing example.
-
-On `pages/_app.tsx`, you'll find `ThemeProvider` for light/dark mode, "ContextProvider", and "WalletProvider" wrapping your app, this is necessary for everything to work.
-
-Although we are using Nextjs13 we are using the "old" folder structure as long as the "app" structure is in experimental mode.
-We will add a `app-structure` branch as soon as its running more stable soon.
+The `.bg-mesh` class automatically switches between light and dark variants based on the theme.
 
 ## Learn More
 
-To learn more about Solana and Next.js, take a look at the following resources:
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Solana Documentation](https://docs.solana.com)
+- [shadcn/ui Documentation](https://ui.shadcn.com)
+- [Tailwind CSS v4](https://tailwindcss.com/docs)
+- [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+## Contributing
 
-- [Solana Documentation](https://docs.solana.com/) - learn about Solana features.
-- [Anchor Language Book](https://book.anchor-lang.com/) - learn about Solana features.
-- [Rust Anchor Documentation](https://docs.rs/anchor-lang/latest/anchor_lang/) - learn about Solana features.
-- [Material-UI Getting Started](https://mui.com/material-ui/getting-started/overview/) - learn about Material-UI features.
-- [TailwindCSS Documentation](https://tailwindcss.com/docs/guides/nextjs) - learn about TailwindCSS features.
+Contributions are welcome! Feel free to open an issue or submit a PR.
 
-You can check out [the Cynova GitHub organization](https://github.com/cynova-enterprise) - your feedback and contributions are welcome!
+## Links
 
-## Join our Discord
+- [Website](https://builderz.dev)
+- [GitHub](https://github.com/builderz-labs)
+- [Twitter](https://x.com/builaboratory)
 
-For any questions, suggestions, join our discord at [https://discord.gg/cynova-enterprise](https://discord.gg/cynova-enterprise).
+## License
+
+MIT

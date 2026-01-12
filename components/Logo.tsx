@@ -1,18 +1,38 @@
 "use client";
-import Brand from "../public/images/builderz-black.svg";
-import BrandW from "../public/images/builderz-white.svg";
+
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useEffect, useState } from "react";
 
-export const Logo = ({ isDark }: any) => {
+interface LogoProps {
+  className?: string;
+}
+
+export function Logo({ className }: LogoProps) {
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  // Default to white logo during SSR and before mount (dark mode default)
+  const logoSrc =
+    mounted && resolvedTheme === "light"
+      ? "/images/Main-Logo-Steel-Black.png"
+      : "/images/Main-Logo-White.png";
+
   return (
-    <Link href="/" passHref>
+    <Link href="/" className={className}>
       <Image
-        src={!isDark === true ? Brand : BrandW}
-        alt=""
-        className="min-w-[30px] w-12 md:w-32 lg:w-64 max-w-[140px] cursor-pointer"
+        src={logoSrc}
+        alt="Builderz"
+        width={140}
+        height={40}
+        className="w-24 md:w-32 lg:w-36"
+        priority
       />
     </Link>
   );
-};
+}
