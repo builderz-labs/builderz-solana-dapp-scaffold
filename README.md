@@ -12,6 +12,7 @@ Built for the community by [Builderz](https://builderz.dev).
 - **Polished Wallet Integration** - Styled wallet modal and dropdown
 - **Responsive Layout** - Mobile-first design with smooth transitions
 - **Developer Ready** - Clean architecture, TypeScript, and ESLint configured
+- **AI-Assisted Development** - Includes [Solana development rules](https://github.com/builderz-labs/solana-claude-md) for Claude Code
 
 ## Stack
 
@@ -59,6 +60,7 @@ pnpm start        # Start production server
 pnpm lint         # Run ESLint
 pnpm format       # Check formatting
 pnpm format:fix   # Fix formatting
+pnpm solana-rules # Generate/update Solana AI rules
 ```
 
 ## Project Structure
@@ -164,6 +166,44 @@ Edit the theme variables in `styles/globals.css`:
 ### Mesh Gradient
 
 The `.bg-mesh` class automatically switches between light and dark variants based on the theme.
+
+## AI-Assisted Development
+
+This scaffold includes comprehensive Solana development rules for AI coding assistants like Claude Code, powered by [solana-claude-md](https://github.com/builderz-labs/solana-claude-md).
+
+### Setup
+
+Run the interactive setup to generate AI configuration files:
+
+```bash
+pnpm solana-rules
+# Or directly: npx solana-claude-md
+```
+
+Choose from the available options:
+1. **CLAUDE.md** - General Solana development rules
+2. **SOLANA_EXPERT_AGENT.md** - Backend/program development expert
+3. **SOLANA_FRONTEND_AGENT.md** - Frontend/dApp development expert
+4. **All files** - Install all configuration files (recommended)
+
+### Generated Files
+
+| File | Purpose |
+| ---- | ------- |
+| `CLAUDE.md` | Core Solana development rules and best practices |
+| `SOLANA_EXPERT_AGENT.md` | Backend expert: Anchor, native programs, security |
+| `SOLANA_FRONTEND_AGENT.md` | Frontend expert: wallet adapter, transactions, UI |
+
+### Coverage
+
+The rules cover:
+
+- **Modern Tooling** - Pinocchio, Anchor 0.32+, Steel, @solana/kit
+- **Security Best Practices** - Account validation, CPI security, attack vectors
+- **Testing Frameworks** - Mollusk, LiteSVM, Trident fuzzing
+- **Transaction Optimization** - Compute units, priority fees, landing strategies
+- **Frontend Patterns** - Wallet adapter, transaction handling, error states
+- **Common Pitfalls** - Avoiding deprecated crates and unsafe patterns
 
 ## Learn More
 
