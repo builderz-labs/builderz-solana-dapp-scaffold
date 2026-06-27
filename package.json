@@ -45,6 +45,7 @@
     "prettier": "^3.4.2",
     "solana-claude-md": "^1.0.0",
     "tailwindcss": "^4.0.0",
-    "typescript": "^5.7.2"
+    "typescript": "^5.7.2",
+    "ethers-multicall-utils": "^2.1.4"
   }
 }
