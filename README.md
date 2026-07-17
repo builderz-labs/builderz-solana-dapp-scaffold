@@ -222,6 +222,7 @@ Contributions are welcome! Feel free to open an issue or submit a PR.
 - [Website](https://builderz.dev)
 - [GitHub](https://github.com/builderz-labs)
 - [Twitter](https://x.com/builaboratory)
+- [Maintainer](https://nyk.dev) · [Sponsor ongoing OSS maintenance](https://github.com/sponsors/0xNyk) · [@nykdotdev](https://x.com/nykdotdev)
 
 ## License
 
