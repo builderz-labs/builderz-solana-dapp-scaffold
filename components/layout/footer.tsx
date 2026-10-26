@@ -1,18 +1,14 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useMounted } from "@/lib/use-mounted";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { Github, Twitter, Globe } from "lucide-react";
 
 export function Footer() {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   const logoSrc =
     mounted && resolvedTheme === "light"

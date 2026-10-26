@@ -1,21 +1,17 @@
 "use client";
 
 import { useTheme } from "next-themes";
+import { useMounted } from "@/lib/use-mounted";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 interface LogoProps {
   className?: string;
 }
 
 export function Logo({ className }: LogoProps) {
-  const [mounted, setMounted] = useState(false);
+  const mounted = useMounted();
   const { resolvedTheme } = useTheme();
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   // Default to white logo during SSR and before mount (dark mode default)
   const logoSrc =
