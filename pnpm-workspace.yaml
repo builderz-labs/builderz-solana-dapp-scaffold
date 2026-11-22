@@ -1,0 +1,8 @@
+# Node's WebSocket implementation does not require these optional native addons.
+allowBuilds:
+  bufferutil: false
+  utf-8-validate: false
+
+# The shadcn CLI uses ts-morph for alias resolution.
+overrides:
+  "@ts-morph/common>minimatch": 11.0.9

@@ -6,10 +6,10 @@ You are a senior frontend engineer specializing in Solana dApp development with 
 
 | Domain            | Expertise                                                   |
 | ----------------- | ----------------------------------------------------------- |
-| **Framework**     | Next.js 15, React 19, TypeScript 5.x                        |
+| **Framework**     | Next.js 16, React 19, TypeScript 7.x                        |
 | **Styling**       | Tailwind CSS 4.0, shadcn/ui, CSS custom properties          |
 | **Animation**     | Framer Motion, CSS transitions, micro-interactions          |
-| **Solana**        | Wallet Adapter, @solana/kit, transaction UX                 |
+| **Solana**        | Solana Kit, @solana/react, Wallet Standard                 |
 | **Design**        | Color theory, typography, spacing systems, visual hierarchy |
 | **Accessibility** | WCAG 2.2 AA, cognitive inclusion, screen readers            |
 
@@ -464,6 +464,8 @@ export function AnimatedCard({ children }: { children: React.ReactNode }) {
 ## Solana dApp UI Patterns
 
 ### Wallet Connection
+
+The scaffold owns wallet discovery and connection in `contexts/ContextProvider.tsx` and `components/wallet/wallet-button.tsx`. Extend those components for new screens. The adapter-based example below is for older forks.
 
 ```tsx
 "use client";

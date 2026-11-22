@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, Home, Github, Twitter, Globe } from "lucide-react";
+import { Menu, Home, CodeXml, MessageCircle, Globe } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -66,12 +66,12 @@ export function MobileNav() {
             />
             <SocialButton
               href="https://github.com/builderz-labs"
-              icon={<Github className="h-4 w-4" />}
+              icon={<CodeXml className="h-4 w-4" />}
               label="GitHub"
             />
             <SocialButton
-              href="https://x.com/builaboratory"
-              icon={<Twitter className="h-4 w-4" />}
+              href="https://x.com/builderzdotdev"
+              icon={<MessageCircle className="h-4 w-4" />}
               label="Twitter"
             />
           </div>

@@ -1,5 +1,4 @@
 import { Toaster } from "sonner";
-import "@solana/wallet-adapter-react-ui/styles.css";
 import "@/styles/globals.css";
 import { Providers } from "./providers";
 import { Header } from "@/components/layout/header";
@@ -7,7 +6,7 @@ import { Footer } from "@/components/layout/footer";
 
 export const metadata = {
   title: "Builderz Solana dApp Scaffold",
-  description: "A modern Solana dApp scaffold with Next.js 15 and shadcn/ui",
+  description: "A modern Solana dApp scaffold with Next.js 16 and Solana Kit",
 };
 
 export default function RootLayout({

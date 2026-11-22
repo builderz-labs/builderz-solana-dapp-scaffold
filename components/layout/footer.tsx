@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 import { useMounted } from "@/lib/use-mounted";
 import Image from "next/image";
 import Link from "next/link";
-import { Github, Twitter, Globe } from "lucide-react";
+import { CodeXml, MessageCircle, Globe } from "lucide-react";
 
 export function Footer() {
   const mounted = useMounted();
@@ -22,16 +22,19 @@ export function Footer() {
           {/* Left: Social links */}
           <div className="flex items-center gap-1">
             <FooterLink
+              label="Builderz website"
               href="https://builderz.dev"
               icon={<Globe className="h-4 w-4" />}
             />
             <FooterLink
+              label="Builderz on GitHub"
               href="https://github.com/builderz-labs"
-              icon={<Github className="h-4 w-4" />}
+              icon={<CodeXml className="h-4 w-4" />}
             />
             <FooterLink
-              href="https://x.com/builaboratory"
-              icon={<Twitter className="h-4 w-4" />}
+              label="Builderz on X"
+              href="https://x.com/builderzdotdev"
+              icon={<MessageCircle className="h-4 w-4" />}
             />
           </div>
 
@@ -66,10 +69,19 @@ export function Footer() {
   );
 }
 
-function FooterLink({ href, icon }: { href: string; icon: React.ReactNode }) {
+function FooterLink({
+  href,
+  icon,
+  label,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  label: string;
+}) {
   return (
     <Link
       href={href}
+      aria-label={label}
       target="_blank"
       rel="noopener noreferrer"
       className="p-2 rounded-lg text-muted-foreground/70 hover:text-builderz-green hover:bg-accent/50 transition-all duration-200"
