@@ -105,12 +105,6 @@ pnpm exec shadcn add dropdown-menu
 pnpm exec shadcn add input
 ```
 
-## Environment Variables
-
-| Variable                 | Description                                    |
-| ------------------------ | ---------------------------------------------- |
-| `NEXT_PUBLIC_HELIUS_URL` | Solana RPC endpoint (defaults to mainnet-beta) |
-
 ## Customization
 
 ### Brand Colors
