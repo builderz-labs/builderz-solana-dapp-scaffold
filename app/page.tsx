@@ -1,7 +1,7 @@
 "use client";
 
 import { WalletButton } from "@/components/wallet/wallet-button";
-import { ArrowRight, Github, Globe, X } from "lucide-react";
+import { ArrowRight, CodeXml, Globe, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -64,7 +64,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="group flex items-center gap-2 px-6 py-2.5 rounded-full border border-border bg-background/50 hover:bg-accent hover:border-builderz-green/30 transition-all duration-300"
           >
-            <Github className="h-4 w-4" />
+            <CodeXml className="h-4 w-4" />
             <span className="font-medium">View Source</span>
             <ArrowRight className="h-4 w-4 opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all duration-300" />
           </Link>
@@ -82,11 +82,11 @@ export default function Home() {
           />
           <SocialLink
             href="https://github.com/builderz-labs"
-            icon={<Github className="h-5 w-5" />}
+            icon={<CodeXml className="h-5 w-5" />}
             label="GitHub"
           />
           <SocialLink
-            href="https://x.com/builaboratory"
+            href="https://x.com/builderzdotdev"
             icon={<X className="h-5 w-5" />}
             label="Twitter"
           />

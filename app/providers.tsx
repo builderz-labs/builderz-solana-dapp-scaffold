@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "next-themes";
-import WalletContextProvider from "@/contexts/ContextProvider";
+import { WalletContextProvider } from "@/contexts/ContextProvider";
 
 interface ProvidersProps {
   children: React.ReactNode;

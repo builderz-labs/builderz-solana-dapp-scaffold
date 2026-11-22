@@ -1,86 +1,47 @@
 # Builderz Solana dApp Scaffold
 
-A modern, minimal [Solana](https://solana.com) dApp scaffold built with Next.js 16, Tailwind CSS v4, and shadcn/ui. Features a polished design system with 2026 aesthetics including glassmorphism, micro-animations, and a unified component library.
+A Next.js App Router starter for connecting a Solana wallet. Tailwind CSS v4 and shadcn/ui power the interface. It includes a responsive home page, a mobile navigation drawer and a system, light and dark theme. Solana Kit provides the RPC client, Wallet Standard discovers compatible wallets, and the React provider shares the selected account across the app.
 
-Built for the community by [Builderz](https://builderz.dev).
+## Run locally
 
-## Features
+Use Node.js 26 LTS and pnpm 12.21.0. If pnpm is missing, install it with `npm install --global pnpm@12.21.0`. The package manifest pins pnpm, Next.js, React and the Solana client packages. The default RPC endpoint is Solana devnet. You can start the app without credentials or funds.
 
-- **Modern Design System** - Glassmorphism, soft UI, and micro-delight animations
-- **System Theme Detection** - Automatic dark/light mode based on OS preference
-- **Unified Button Styles** - Consistent button variants (glow, soft, glass, outline)
-- **Polished Wallet Integration** - Styled wallet modal and dropdown
-- **Responsive Layout** - Mobile-first design with smooth transitions
-- **Developer Ready** - Clean architecture, TypeScript, and ESLint configured
-- **AI-Assisted Development** - Includes [Solana development rules](https://github.com/builderz-labs/solana-claude-md) for Claude Code
-
-## Stack
-
-- **Next.js 16** - React framework with App Router and Turbopack
-- **React 19** - Latest React with concurrent features
-- **Tailwind CSS v4** - CSS-first configuration
-- **shadcn/ui** - Accessible component primitives
-- **next-themes** - Dark/light/system theme support
-- **Solana Wallet Adapter** - Multi-wallet support
-- **Lucide Icons** - Beautiful, consistent icons
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js 24+ (Next.js 16 requires Node.js 20.9.0 minimum)
-- pnpm (recommended)
-
-### Installation
-
-```bash
-# Clone the repository
+```sh
 git clone https://github.com/builderz-labs/builderz-solana-dapp-scaffold.git
 cd builderz-solana-dapp-scaffold
-
-# Install dependencies
-pnpm install
-
-# Set up environment
-cp .env.example .env
-# Edit .env and add your RPC endpoint (e.g., from Helius)
-
-# Start development server
+pnpm install --frozen-lockfile
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [localhost on port 3000](http://localhost:3000). Select **Connect wallet** and choose an installed Wallet Standard wallet. Approving a connection shares the selected account with the page. The starter does not request a transaction.
 
-## Scripts
+## Configure an RPC endpoint
 
-```bash
-pnpm dev          # Start development server
-pnpm build        # Production build
-pnpm start        # Start production server
-pnpm lint         # Run ESLint
-pnpm format       # Check formatting
-pnpm format:fix   # Fix formatting
-pnpm solana-rules # Generate/update Solana AI rules
+Copy `.env.example` to `.env.local`. Select `devnet` or `mainnet` with `NEXT_PUBLIC_SOLANA_CLUSTER`. To supply your own endpoint, set `NEXT_PUBLIC_SOLANA_RPC_URL` to a browser-safe HTTP(S) RPC endpoint. Restart the development server after changing it. Existing forks can also use `NEXT_PUBLIC_HELIUS_URL`. The new RPC variable takes priority. For existing Helius configurations with no explicit cluster, the legacy setting retains the mainnet default. Next.js embeds public variables at build time. Keep secret provider credentials on a server you control.
+
+## Check a change
+
+```sh
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm exec playwright install chromium
+pnpm test:e2e
 ```
 
-## Project Structure
+The browser tests use a simulated wallet. To check a real integration, open the app in a wallet-enabled browser, cancel a connection once, connect on the next attempt and disconnect from the menu. No SOL is needed. Run `pnpm start` to serve the production build.
 
-```
-├── app/
-│   ├── layout.tsx        # Root layout with providers
-│   ├── providers.tsx     # Theme + Wallet providers
-│   └── page.tsx          # Home page
-├── components/
-│   ├── ui/               # shadcn/ui components (button, sheet)
-│   ├── layout/           # Header, footer, theme toggle, mobile nav
-│   └── wallet/           # Wallet button wrapper
-├── contexts/
-│   └── ContextProvider.tsx  # Solana wallet context
-├── lib/
-│   └── utils.ts          # Utility functions (cn)
-└── styles/
-    └── globals.css       # Design system & Tailwind v4 config
-```
+## Where to make changes
+
+| Path | Responsibility |
+| --- | --- |
+| `app/page.tsx` | Home screen and main wallet entry point |
+| `app/providers.tsx` | Theme and wallet provider composition |
+| `lib/solana-client.ts` | Solana Kit client, RPC endpoint and wallet discovery |
+| `contexts/ContextProvider.tsx` | React client provider |
+| `components/wallet/wallet-button.tsx` | Wallet selection and connected-account controls |
+| `components/layout/` | Header, footer, theme switch and mobile navigation |
+| `styles/globals.css` | Tailwind CSS v4 theme and component styles |
 
 ## Design System
 
@@ -136,19 +97,13 @@ System preference is respected by default, with CSS media queries ensuring corre
 
 ## Adding Components
 
-Use the shadcn CLI to add new components:
+The mobile menu uses the local shadcn Sheet and Button. Tailwind v4 reads the shadcn color tokens from `@theme inline` in `styles/globals.css`. Add a component with the shadcn CLI:
 
 ```bash
-pnpm dlx shadcn@latest add dialog
-pnpm dlx shadcn@latest add dropdown-menu
-pnpm dlx shadcn@latest add input
+pnpm exec shadcn add dialog
+pnpm exec shadcn add dropdown-menu
+pnpm exec shadcn add input
 ```
-
-## Environment Variables
-
-| Variable                 | Description                                    |
-| ------------------------ | ---------------------------------------------- |
-| `NEXT_PUBLIC_HELIUS_URL` | Solana RPC endpoint (defaults to mainnet-beta) |
 
 ## Customization
 
@@ -192,7 +147,7 @@ Choose from the available options:
 | ---- | ------- |
 | `CLAUDE.md` | Core Solana development rules and best practices |
 | `SOLANA_EXPERT_AGENT.md` | Backend expert: Anchor, native programs, security |
-| `SOLANA_FRONTEND_AGENT.md` | Frontend expert: wallet adapter, transactions, UI |
+| `SOLANA_FRONTEND_AGENT.md` | Frontend examples for wallet integration, transactions, and UI |
 
 ### Coverage
 
@@ -208,10 +163,10 @@ The rules cover:
 ## Learn More
 
 - [Next.js Documentation](https://nextjs.org/docs)
-- [Solana Documentation](https://docs.solana.com)
+- [Solana Documentation](https://solana.com/docs)
 - [shadcn/ui Documentation](https://ui.shadcn.com)
 - [Tailwind CSS v4](https://tailwindcss.com/docs)
-- [Solana Wallet Adapter](https://github.com/solana-labs/wallet-adapter)
+- [Solana Kit and React](https://solana.com/docs/frontend)
 
 ## Contributing
 
@@ -221,9 +176,9 @@ Contributions are welcome! Feel free to open an issue or submit a PR.
 
 - [Website](https://builderz.dev)
 - [GitHub](https://github.com/builderz-labs)
-- [Twitter](https://x.com/builaboratory)
+- [Twitter](https://x.com/builderzdotdev)
 - [Maintainer](https://nyk.dev) · [Sponsor ongoing OSS maintenance](https://github.com/sponsors/0xNyk) · [@nykdotdev](https://x.com/nykdotdev)
 
 ## License
 
-MIT
+[Apache License 2.0](LICENSE.md)
