@@ -4,7 +4,7 @@ A Next.js App Router starter for connecting a Solana wallet. Tailwind CSS v4 and
 
 ## Run locally
 
-Use Node.js 26 LTS and pnpm 12.21.0. If pnpm is missing, install it with `npm install --global pnpm@12.21.0`. The package manifest pins pnpm, Next.js, React and the Solana client packages. The default RPC endpoint is Solana devnet. You can start the app without credentials or funds.
+Use Node.js 26 LTS and pnpm 12.23.0. If pnpm is missing, install it with `npm install --global pnpm@12.23.0`. The package manifest pins pnpm, Next.js, React and the Solana client packages. The default RPC endpoint is Solana devnet. You can start the app without credentials or funds.
 
 ```sh
 git clone https://github.com/builderz-labs/builderz-solana-dapp-scaffold.git
