@@ -4,7 +4,7 @@ A Next.js App Router starter for connecting a Solana wallet. Tailwind CSS v4 and
 
 ## Run locally
 
-Use Node.js 26 LTS and pnpm 12.21.0. If pnpm is missing, install it with `npm install --global pnpm@12.21.0`. The package manifest pins pnpm, Next.js, React and the Solana client packages. The default RPC endpoint is Solana devnet. You can start the app without credentials or funds.
+Use Node.js 26 LTS and pnpm 12.23.0. If pnpm is missing, install it with `npm install --global pnpm@12.23.0`. The package manifest pins pnpm, Next.js, React and the Solana client packages. The default RPC endpoint is Solana devnet. You can start the app without credentials or funds.
 
 ```sh
 git clone https://github.com/builderz-labs/builderz-solana-dapp-scaffold.git
@@ -33,15 +33,15 @@ The browser tests use a simulated wallet. To check a real integration, open the 
 
 ## Where to make changes
 
-| Path | Responsibility |
-| --- | --- |
-| `app/page.tsx` | Home screen and main wallet entry point |
-| `app/providers.tsx` | Theme and wallet provider composition |
-| `lib/solana-client.ts` | Solana Kit client, RPC endpoint and wallet discovery |
-| `contexts/ContextProvider.tsx` | React client provider |
-| `components/wallet/wallet-button.tsx` | Wallet selection and connected-account controls |
-| `components/layout/` | Header, footer, theme switch and mobile navigation |
-| `styles/globals.css` | Tailwind CSS v4 theme and component styles |
+| Path                                  | Responsibility                                       |
+| ------------------------------------- | ---------------------------------------------------- |
+| `app/page.tsx`                        | Home screen and main wallet entry point              |
+| `app/providers.tsx`                   | Theme and wallet provider composition                |
+| `lib/solana-client.ts`                | Solana Kit client, RPC endpoint and wallet discovery |
+| `contexts/ContextProvider.tsx`        | React client provider                                |
+| `components/wallet/wallet-button.tsx` | Wallet selection and connected-account controls      |
+| `components/layout/`                  | Header, footer, theme switch and mobile navigation   |
+| `styles/globals.css`                  | Tailwind CSS v4 theme and component styles           |
 
 ## Design System
 
@@ -136,6 +136,7 @@ pnpm solana-rules
 ```
 
 Choose from the available options:
+
 1. **CLAUDE.md** - General Solana development rules
 2. **SOLANA_EXPERT_AGENT.md** - Backend/program development expert
 3. **SOLANA_FRONTEND_AGENT.md** - Frontend/dApp development expert
@@ -143,10 +144,10 @@ Choose from the available options:
 
 ### Generated Files
 
-| File | Purpose |
-| ---- | ------- |
-| `CLAUDE.md` | Core Solana development rules and best practices |
-| `SOLANA_EXPERT_AGENT.md` | Backend expert: Anchor, native programs, security |
+| File                       | Purpose                                                        |
+| -------------------------- | -------------------------------------------------------------- |
+| `CLAUDE.md`                | Core Solana development rules and best practices               |
+| `SOLANA_EXPERT_AGENT.md`   | Backend expert: Anchor, native programs, security              |
 | `SOLANA_FRONTEND_AGENT.md` | Frontend examples for wallet integration, transactions, and UI |
 
 ### Coverage

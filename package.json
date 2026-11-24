@@ -2,7 +2,7 @@
   "name": "builderz-solana-dapp-scaffold",
   "version": "2.0.0",
   "private": true,
-  "packageManager": "pnpm@12.21.0",
+  "packageManager": "pnpm@12.23.0+sha512.02da94ffaf133f46074322afe552f90d40b5f71ae259aefbccdacc5085b1d617e98d65e0131f5748b9b67445978ee5055d7d59a473f1eef0d504854fefcd5975",
   "engines": {
     "node": ">=26.0.0"
   },
@@ -11,8 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "oxlint --deny-warnings .",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "solana-rules": "solana-claude-md",
     "typecheck": "next typegen && tsc --noEmit",
     "test:e2e": "playwright test"
@@ -27,7 +27,7 @@
     "@solana/react": "8.6.0",
     "class-variance-authority": "0.7.1",
     "clsx": "2.1.1",
-    "lucide-react": "1.77.0",
+    "lucide-react": "1.78.0",
     "next": "16.4.6",
     "next-themes": "0.4.6",
     "react": "19.3.1",
@@ -41,7 +41,7 @@
     "@types/node": "26.6.6",
     "@types/react": "19.3.0",
     "@types/react-dom": "19.3.0",
-    "oxlint": "1.94.0",
+    "oxlint": "1.95.0",
     "prettier": "3.10.1",
     "shadcn": "4.23.0",
     "solana-claude-md": "1.0.1",
