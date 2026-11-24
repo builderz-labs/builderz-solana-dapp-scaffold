@@ -8,5 +8,10 @@
     "jsx-a11y/alt-text": "error",
     "nextjs/no-img-element": "warn"
   },
-  "ignorePatterns": [".next/**", "next-env.d.ts", "test-results/**", "playwright-report/**"]
+  "ignorePatterns": [
+    ".next/**",
+    "next-env.d.ts",
+    "test-results/**",
+    "playwright-report/**"
+  ]
 }

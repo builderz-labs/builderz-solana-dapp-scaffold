@@ -11,8 +11,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "oxlint --deny-warnings .",
-    "format": "prettier --check --ignore-path .gitignore .",
-    "format:fix": "prettier --write --ignore-path .gitignore .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
     "solana-rules": "solana-claude-md",
     "typecheck": "next typegen && tsc --noEmit",
     "test:e2e": "playwright test"
