@@ -180,6 +180,12 @@ Contributions are welcome! Feel free to open an issue or submit a PR.
 - [Twitter](https://x.com/builderzdotdev)
 - [Maintainer](https://nyk.dev) · [Sponsor ongoing OSS maintenance](https://github.com/sponsors/0xNyk) · [@nykdotdev](https://x.com/nykdotdev)
 
+## Built by Builderz
+
+[Builderz](https://builderz.dev) is a Solana and AI engineering studio. This repository is public software from the [Builderz Labs](https://github.com/builderz-labs) organization.
+
+Maintained by [Nyk](https://nyk.dev). [Sponsor ongoing open-source maintenance](https://github.com/sponsors/0xNyk) or follow [@nykdotdev](https://x.com/nykdotdev).
+
 ## License
 
 [Apache License 2.0](LICENSE.md)
